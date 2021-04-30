@@ -8,26 +8,24 @@
         <span class="block">Help people in need.</span>
         <span class="block text-gray-700">Make sure you enter valid information only.</span>
       </h2>
-      <p class="mt-4 text-lg leading-6 text-yellow-600">We are a group of volunteers helping people get over this COVID-19 crisis. We notify donors and beneficiaries via email and sms.</p>
+      <p class="mt-4 text-lg leading-6 text-indigo-600">We are a group of volunteers helping people get over this COVID-19 crisis. We notify donors and beneficiaries via email and sms.</p>
 
       <!-- This example requires Tailwind CSS v2.0+ -->
       <div class="flex py-6 items-center justify-center">
     <span class="relative z-0 inline-flex shadow-sm rounded-md">
-      <button to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-yellow-500">
+      <nuxt-link to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
         Become a Donor
-      </button>
-      <button to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-yellow-500">
+      </nuxt-link>
+      <nuxt-link to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
         Request Blood/Plasma
-      </button>
-      <button to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-yellow-500">
+      </nuxt-link>
+      <nuxt-link to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
         Become a Volunteer
-      </button>
+      </nuxt-link>
     </span>
       </div>
     </div>
   </div>
-
-
 
 </div>
 

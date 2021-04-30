@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'covidhelp.ui',
+    title: 'jharkhand.covidhelp.page',
     htmlAttrs: {
       lang: 'en'
     },
@@ -44,6 +44,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+
+    ['nuxt-buefy', { css: true }]
   ],
 
   env : {
