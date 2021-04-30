@@ -68,7 +68,7 @@
           Donors
         </dt>
         <dd class="order-1 text-5xl font-extrabold text-white">
-          100
+          {{ donorCount }}
         </dd>
       </div>
       <div class="flex flex-col mt-10 sm:mt-0">
@@ -76,7 +76,7 @@
           Beneficiaries
         </dt>
         <dd class="order-1 text-5xl font-extrabold text-white">
-          234
+          {{ beneficiaryCount }}
         </dd>
       </div>
       <div class="flex flex-col mt-10 sm:mt-0">
@@ -84,7 +84,7 @@
           Volunteers
         </dt>
         <dd class="order-1 text-5xl font-extrabold text-white">
-          54
+          {{ volunteerCount }}
         </dd>
       </div>
     </dl>
@@ -99,9 +99,22 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo";
 export default {
-  components: {Logo}
+  data() {
+    return {
+      volunteerCount: '...',
+      donorCount: '...',
+      beneficiaryCount: '...'
+    }
+  },
+  created() {
+    this.$store.dispatch('fetchSubdomainDetails', {subdomain: 'jharkhand'})
+      .then((data) => {
+        this.volunteerCount = data.volunteerCount
+        this.donorCount = data.donorCount
+        this.beneficiaryCount = data.beneficiaryCount
+      })
+  }
 }
 </script>
 

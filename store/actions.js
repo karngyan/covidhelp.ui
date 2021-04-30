@@ -1,10 +1,9 @@
 export default {
 
-  fetchSubdomains({state, commit}) {
+  fetchSubdomainDetails({commit}, {subdomain}) {
     return new Promise((resolve, reject) => {
-      this.$axios.get('/subdomains')
+      this.$axios.get('/subdomain/' + subdomain)
         .then((resp) => {
-          commit('setSubdomains', resp.data.subdomains)
           resolve(resp.data)
         }).catch((error) => {
           reject(error)
@@ -39,6 +38,18 @@ export default {
   submitVolunteerForm({state, commit}, form) {
     return new Promise((resolve, reject) => {
       this.$axios.post('/volunteer/create', {
+        ...form
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
+  },
+
+  submitFeedbackForm({}, form) {
+    return new Promise((resolve, reject) => {
+      this.$axios.post('/feedback/create', {
         ...form
       }).then((resp) => {
         resolve(resp.data)
