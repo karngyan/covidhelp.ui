@@ -123,11 +123,11 @@
     <div class="submit py-4">
       <b-field>
         <b-checkbox v-model="consentToShare">
-          I give consent to share my information for plasma donor matching only.
+          I give consent to share my information for donor matching only.
         </b-checkbox>
       </b-field>
 
-      <b-button @click="submitForm" type="is-primary" expanded :loading="loading">Submit</b-button>
+      <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Submit</b-button>
     </div>
   </div>
 </div>
@@ -181,15 +181,15 @@ const cities = [
 export default {
   data() {
     return {
-      name: 'Gyan',
-      email: 'mail@karngyan.com',
-      phone: '8051005416',
+      name: '',
+      email: '',
+      phone: '',
       whatsappNumber: '',
-      gender: 'M',
+      gender: '',
       bloodGroup: 'A+',
       heightInCm: 150,
       weightInKgs: 70,
-      city: '',
+      city: 'Ranchi',
       subdomain: 'jharkhand',
       age: 25,
       covidInfected: true,

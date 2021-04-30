@@ -22,5 +22,17 @@ export default {
         reject(error)
       })
     })
+  },
+
+  submitBeneficiaryForm({state, commit}, form) {
+    return new Promise((resolve, reject) => {
+      this.$axios.post('/beneficiary/create', {
+        ...form
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
   }
 }
