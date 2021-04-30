@@ -5,7 +5,7 @@
       <div class="flex px-2 lg:px-0">
         <nuxt-link to="/" class="flex-shrink-0 flex items-center space-x-1">
           <Logo class="text-purple-700 h-10 w-10" alt="Logo" />
-          <span class="font-bold">jharkhand.covidhelp</span>
+          <span class="font-bold">Jharkhand Covid Help</span>
         </nuxt-link>
       </div>
 

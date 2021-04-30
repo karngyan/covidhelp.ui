@@ -36,13 +36,13 @@
 
       <div class="flex py-5 items-center justify-center">
         <span class="relative z-0 inline-flex shadow-sm rounded-md">
-          <nuxt-link to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+          <nuxt-link to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
             Become a Donor
           </nuxt-link>
-          <nuxt-link to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+          <nuxt-link to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
             Request Blood/Plasma
           </nuxt-link>
-          <nuxt-link to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+          <nuxt-link to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
             Become a Volunteer
           </nuxt-link>
         </span>
