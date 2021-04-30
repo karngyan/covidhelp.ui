@@ -34,5 +34,17 @@ export default {
         reject(error)
       })
     })
+  },
+
+  submitVolunteerForm({state, commit}, form) {
+    return new Promise((resolve, reject) => {
+      this.$axios.post('/volunteer/create', {
+        ...form
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
   }
 }

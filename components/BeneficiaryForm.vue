@@ -1,6 +1,6 @@
 <template>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto space-y-4">
+  <div v-show="!done" class="max-w-3xl mx-auto space-y-4">
 
     <div class="relative my-6">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -83,6 +83,16 @@
       <b-button @click="submitForm" type="is-primary" :disabled="!consentToShare" expanded :loading="loading">Submit</b-button>
     </div>
   </div>
+  <div v-show="done" class="max-w-3xl mx-auto space-y-4">
+    <div class="h-screen space-y-2 -my-10 flex flex-col items-center justify-center relative">
+      <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Donor Request Submitted Successfully!
+      </h2>
+      <p class="max-w-3xl mx-auto text-center text-xl text-gray-500">
+        We're trying our best to find a donor for you. Please turn your email notifications on and stay strong :)
+      </p>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -148,7 +158,8 @@ export default {
       loading: false,
       cities: cities,
       type: '0',
-      reportUrl: ''
+      reportUrl: '',
+      done: false,
     }
   },
   watch: {
@@ -181,7 +192,7 @@ export default {
         .then(() => {
           this.success('Donor Request submitted successfully!')
           this.loading = false
-          this.$router.push('/')
+          this.done = true
         }).catch(error => {
           this.danger(error.response.data)
           this.loading = false

@@ -1,6 +1,6 @@
 <template>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto space-y-4">
+  <div v-show="!done" class="max-w-3xl mx-auto space-y-4">
 
     <div class="relative my-6">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -29,7 +29,7 @@
     </b-field>
 
     <b-field label="Phone Number">
-      <b-input placeholder="Enter your active phone number" v-model="phone" type="text"></b-input>
+      <b-input placeholder="Enter your active phone number" v-model="phone" type="tel"></b-input>
     </b-field>
 
     <b-field label="Whatsapp Number">
@@ -130,6 +130,16 @@
       <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Submit</b-button>
     </div>
   </div>
+  <div v-show="done" class="max-w-3xl mx-auto space-y-4">
+    <div class="h-screen -my-10 space-y-2 flex flex-col items-center justify-center relative">
+      <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Donor Registered Successfully!
+      </h2>
+      <p class="max-w-3xl mx-auto text-center text-xl text-gray-500">
+        Thank you so much for contributing. Please turn your email notifications on. :)
+      </p>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -185,7 +195,7 @@ export default {
       email: '',
       phone: '',
       whatsappNumber: '',
-      gender: '',
+      gender: 'M',
       bloodGroup: 'A+',
       heightInCm: 150,
       weightInKgs: 70,
@@ -202,7 +212,8 @@ export default {
       consentToShare: true,
       loading: false,
       cities: cities,
-      preference: '0'
+      preference: '0',
+      done: false,
     }
   },
   watch: {
@@ -244,7 +255,7 @@ export default {
         .then(() => {
           this.success('Donor registered successfully!')
           this.loading = false
-          this.$router.push('/')
+          this.done = true
         }).catch(error => {
           this.danger(error.response.data)
           this.loading = false

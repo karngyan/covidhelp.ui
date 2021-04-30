@@ -1,13 +1,13 @@
 <template>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto">
+  <div v-show="!done" class="max-w-3xl mx-auto space-y-4">
 
-    <div class="py-8">
-      <h3 class="text-lg leading-6 font-medium text-gray-900">
+    <div class="relative my-6">
+      <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Volunteer Form
-      </h3>
-      <p class="mt-1 max-w-2xl text-sm text-gray-500">
-        Please enter only if you're ready to spare some time honestly.
+      </h2>
+      <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
+        Help us in quickly matching donors to people in need. This is grunt work. Calling out people with empathy.
       </p>
     </div>
 
@@ -33,86 +33,84 @@
       </b-checkbox>
     </b-field>
 
-    <b-field
-      label="Gender">
-      <b-select placeholder="Select one" expanded v-model="gender">
-        <option value="F">Female</option>
-        <option value="M">Male</option>
-        <option value="O">Others</option>
+    <b-field label="City">
+      <b-select placeholder="Select one" expanded v-model="city">
+        <option v-for="city in cities" :value="city.city" :key="city.city">{{ city.city }}</option>
       </b-select>
     </b-field>
 
-    <b-field label="Blood Group">
-      <b-select placeholder="Select one" expanded v-model="bloodGroup">
-        <option value="A+">A+</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B-">B-</option>
-        <option value="AB+">AB+</option>
-        <option value="AB-">AB-</option>
-        <option value="O+">O+</option>
-        <option value="O-">O-</option>
-      </b-select>
+    <b-field label="How many hours per week can you contribute?">
+      <b-numberinput v-model="hoursPerWeek"></b-numberinput>
     </b-field>
 
-    <b-field label="Height (in cms)">
-      <b-numberinput v-model="heightInCm"></b-numberinput>
-    </b-field>
+    <div class="submit py-4">
+      <b-field>
+        <b-checkbox v-model="consentToShare">
+          I give consent to share my information with COVID Help for volunteer work.
+        </b-checkbox>
+      </b-field>
 
-    <b-field label="Weight (in kgs)">
-      <b-numberinput v-model="weightInKgs"></b-numberinput>
-    </b-field>
-
-    <b-field label="Age (in years)">
-      <b-numberinput v-model="age"></b-numberinput>
-    </b-field>
-
-    <b-field label="When were you tested positive?">
-        <b-datepicker v-model="covidInfectedStart"
-            :first-day-of-week="1"
-            placeholder="Click to select a date">
-
-            <b-button
-                label="Today"
-                type="is-primary"
-                icon-left="calendar-today"
-                @click="covidInfectedStart = new Date()" />
-        </b-datepicker>
-    </b-field>
-
-    <b-field>
-      <b-checkbox v-model="vaccinated" type="is-success">
-        Have you been vaccinated?
-      </b-checkbox>
-    </b-field>
-
-    <b-field v-show="vaccinated" label="Please share the vaccination date..">
-        <b-datepicker v-model="vaccinationDate"
-            :first-day-of-week="1"
-            placeholder="Click to select vaccination date">
-
-            <b-button
-                label="Today"
-                type="is-primary"
-                icon-left="calendar-today"
-                @click="vaccinationDate = new Date()" />
-        </b-datepicker>
-    </b-field>
-
-
-
-    <b-field label="Since when have you been symptom free? (Please enter number of days)">
-      <b-numberinput v-model="symptomFreeDays"></b-numberinput>
-    </b-field>
-
-    <div class="submit pb-8 pt-5">
-      <b-button type="is-primary" expanded :loading="loading">Submit</b-button>
+      <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Submit</b-button>
+    </div>
+  </div>
+  <div v-show="done" class="max-w-3xl mx-auto space-y-4">
+    <div class="h-screen space-y-2 -my-10 flex flex-col items-center justify-center relative">
+      <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Volunteer Registered Successfully!
+      </h2>
+      <p class="max-w-3xl mx-auto text-center text-xl text-gray-500">
+        Thank you for your interest. We'll reach our shortly. :)
+      </p>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+
+const cities = [
+  {"city":"Amlabad", "state":"Jharkhand"},
+	{"city":"Ara", "state":"Jharkhand"},
+	{"city":"Barughutu", "state":"Jharkhand"},
+	{"city":"Bokaro Steel City", "state":"Jharkhand"},
+	{"city":"Chaibasa", "state":"Jharkhand"},
+	{"city":"Chakradharpur", "state":"Jharkhand"},
+	{"city":"Chandrapura", "state":"Jharkhand"},
+	{"city":"Chatra", "state":"Jharkhand"},
+	{"city":"Chirkunda", "state":"Jharkhand"},
+	{"city":"Churi", "state":"Jharkhand"},
+	{"city":"Daltonganj", "state":"Jharkhand"},
+	{"city":"Deoghar", "state":"Jharkhand"},
+	{"city":"Dhanbad", "state":"Jharkhand"},
+	{"city":"Dumka", "state":"Jharkhand"},
+	{"city":"Garhwa", "state":"Jharkhand"},
+	{"city":"Ghatshila", "state":"Jharkhand"},
+	{"city":"Giridih", "state":"Jharkhand"},
+	{"city":"Godda", "state":"Jharkhand"},
+	{"city":"Gomoh", "state":"Jharkhand"},
+	{"city":"Gumia", "state":"Jharkhand"},
+	{"city":"Gumla", "state":"Jharkhand"},
+	{"city":"Hazaribag", "state":"Jharkhand"},
+	{"city":"Hussainabad", "state":"Jharkhand"},
+	{"city":"Jamshedpur", "state":"Jharkhand"},
+	{"city":"Jamtara", "state":"Jharkhand"},
+	{"city":"Jhumri Tilaiya", "state":"Jharkhand"},
+	{"city":"Khunti", "state":"Jharkhand"},
+	{"city":"Lohardaga", "state":"Jharkhand"},
+	{"city":"Madhupur", "state":"Jharkhand"},
+	{"city":"Mihijam", "state":"Jharkhand"},
+	{"city":"Musabani", "state":"Jharkhand"},
+	{"city":"Pakaur", "state":"Jharkhand"},
+	{"city":"Patratu", "state":"Jharkhand"},
+	{"city":"Phusro", "state":"Jharkhand"},
+	{"city":"Ramngarh", "state":"Jharkhand"},
+	{"city":"Ranchi", "state":"Jharkhand"},
+	{"city":"Sahibganj", "state":"Jharkhand"},
+	{"city":"Saunda", "state":"Jharkhand"},
+	{"city":"Simdega", "state":"Jharkhand"},
+	{"city":"Tenu Dam-cum- Kathhara", "state":"Jharkhand"}
+]
+
 export default {
   data() {
     return {
@@ -120,21 +118,15 @@ export default {
       email: '',
       phone: '',
       whatsappNumber: '',
-      gender: 'M',
-      bloodGroup: 'A+',
-      heightInCm: 150,
-      weightInKgs: 70,
-      city: '',
+      gender: '',
+      city: 'Ranchi',
       subdomain: 'jharkhand',
-      age: 25,
-      covidInfected: true,
-      covidInfectedStart: '',
-      covidInfectedEnd: new Date(),
-      symptomFreeDays: 1,
-      vaccinated: false,
-      vaccinationDate: '',
       whatsappCheck: false,
-      loading: false
+      consentToShare: true,
+      loading: false,
+      cities: cities,
+      hoursPerWeek: 10,
+      done: false
     }
   },
   watch: {
@@ -154,6 +146,46 @@ export default {
       }
     },
   },
+  methods: {
+    submitForm() {
+      const store = this.$store
+      this.loading = true
+      const form = {...this.$data}
+
+      console.debug(form)
+      store.dispatch('submitVolunteerForm', form)
+        .then(() => {
+          this.success('Volunteer registered successfully!')
+          this.loading = false
+          this.done = true
+        }).catch(error => {
+          this.danger(error.response.data)
+          this.loading = false
+        })
+
+      this.loading = false
+    },
+    simple(msg) {
+      this.$buefy.notification.open({
+        message: msg,
+        position: 'is-bottom-right',
+      })
+    },
+    success(msg) {
+      this.$buefy.notification.open({
+        message: msg,
+        type: 'is-success',
+        position: 'is-bottom-right',
+      })
+    },
+    danger(msg) {
+      this.$buefy.notification.open({
+          message: msg,
+          position: 'is-bottom-right',
+          type: 'is-danger',
+      })
+    }
+  }
 }
 </script>
 
