@@ -2,11 +2,11 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div class="max-w-3xl mx-auto">
 
-    <div class="py-8">
-      <h3 class="text-lg leading-6 font-medium text-gray-900">
+    <div class="relative my-6">
+      <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Donor Form
-      </h3>
-      <p class="mt-1 max-w-2xl text-sm text-gray-500">
+      </h2>
+      <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
         This information might save someone's life, please enter valid details only.
       </p>
     </div>

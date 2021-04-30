@@ -1,22 +1,32 @@
 <template>
-  <div class="flex items-center justify-center space-x-5 border-b border-gray-200 py-5">
-    <div class="flex flex-col items-center justify-center space-x-5">
-      <div class="flex-shrink-0">
-        <div class="relative">
-          <Logo class="h-16 w-16 text-yellow-700"/>
-        </div>
+<nav class="bg-white z-10 backdrop-filter border-b border-gray-200 shadow">
+  <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex px-2 lg:px-0">
+        <nuxt-link to="/" class="flex-shrink-0 flex items-center space-x-1">
+          <Logo class="text-purple-700 h-10 w-10" alt="Logo" />
+          <span class="font-bold">jharkhand.covidhelp</span>
+        </nuxt-link>
       </div>
-      <div class="pt-1.5 text-center">
-        <h1 class="text-2xl font-bold text-gray-900">jharkhand.covidhelp.page</h1>
-        <p class="text-sm font-medium text-gray-500">covid help community in JH</p>
-      </div>
+
+      <nuxt-link to="/feedback" class="justify-center flex items-center">
+        <b-button type="is-primary is-light">Feedback</b-button>
+      </nuxt-link>
     </div>
   </div>
+</nav>
+
+
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      showMobileMenu: false
+    }
+  }
 }
 </script>
 
