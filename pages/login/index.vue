@@ -2,7 +2,7 @@
 <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-md">
     <nuxt-link to="/">
-      <img class="mx-auto h-12 w-auto" src="https://covidhelp.page/covidhelp.png" alt="logo">
+      <Logo class="mx-auto h-16 w-auto text-purple-700" />
     </nuxt-link>
     <h2 class="mt-3 text-center text-3xl font-extrabold text-gray-900">
       Sign in to your account
@@ -24,9 +24,7 @@
         <b-field label="Password">
           <b-input type="password" v-model="password" minlength="6" password-reveal></b-input>
         </b-field>
-
         <b-button class="mt-8" :disabled="!validateForm" native-type="submit" type="is-primary" expanded :loading="loading">Sign In</b-button>
-
       </form>
     </div>
   </div>
@@ -36,6 +34,7 @@
 
 <script>
 export default {
+  layout: 'auth',
   data() {
     return {
       email: '',
@@ -57,6 +56,7 @@ export default {
           console.debug('user fetched', data)
           store.dispatch('success', 'Signed in successfully!')
           this.loading = false
+          this.$router.push('/dashboard')
         }).catch((error) => {
           console.error(error)
           store.dispatch('danger', error.toString())

@@ -51,6 +51,7 @@ export default {
     return this.$fire.auth.signOut()
       .then(() => {
         commit('setUser', null)
+        this.$router.push("/")
       })
   },
 

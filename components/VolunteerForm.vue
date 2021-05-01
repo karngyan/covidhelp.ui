@@ -2,7 +2,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div v-show="!done" class="max-w-3xl mx-auto space-y-4">
 
-    <div class="relative my-6">
+    <div class="relative pb-6 pt-28">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Volunteer Form
       </h2>
@@ -176,6 +176,7 @@ export default {
                   this.$store.dispatch('success', 'Volunteer registered successfully!')
                   this.loading = false
                   this.done = true
+                  this.$router.push('/dashboard')
                   store.dispatch('setSignUpState', false)
                 }).catch(error => {
                 this.$store.dispatch('danger',error.response.data)
