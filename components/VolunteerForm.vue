@@ -43,6 +43,10 @@
       <b-numberinput v-model="hoursPerWeek"></b-numberinput>
     </b-field>
 
+    <b-field label="Enter new password (min length: 6)">
+      <b-input type="password" password-reveal v-model="password"></b-input>
+    </b-field>
+
     <div class="submit py-4">
       <b-field>
         <b-checkbox v-model="consentToShare">
@@ -50,7 +54,7 @@
         </b-checkbox>
       </b-field>
 
-      <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Submit</b-button>
+      <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Sign Up</b-button>
     </div>
   </div>
   <div v-show="done" class="max-w-3xl mx-auto space-y-4">
@@ -59,7 +63,7 @@
         Volunteer Registered Successfully!
       </h2>
       <p class="max-w-3xl mx-auto text-center text-xl text-gray-500">
-        Thank you for your interest. We'll reach our shortly. :)
+        Thank you for your interest. We'll reach out shortly. :)
       </p>
     </div>
   </div>
@@ -126,7 +130,9 @@ export default {
       loading: false,
       cities: cities,
       hoursPerWeek: 10,
-      done: false
+      done: false,
+      password: '',
+      token: ''
     }
   },
   watch: {
@@ -153,17 +159,38 @@ export default {
       const form = {...this.$data}
 
       console.debug(form)
-      store.dispatch('submitVolunteerForm', form)
+      if (form.email === '' || form.password.length < 6) {
+        this.$store.dispatch('danger', 'Please fill all the details!')
+        this.loading = false
+        return
+      }
+
+      store.dispatch('setSignUpState', true)
         .then(() => {
-          this.$store.dispatch('success', 'Volunteer registered successfully!')
-          this.loading = false
-          this.done = true
-        }).catch(error => {
-          this.$store.dispatch('danger',error.response.data)
-          this.loading = false
+          store.dispatch('signUpWithEmailAndPassword', {email: form.email, password: form.password})
+            .then(async (data) => {
+              const token = await this.$fire.auth.currentUser.getIdToken(true)
+              form.token = token
+              store.dispatch('submitVolunteerForm', form)
+                .then(() => {
+                  this.$store.dispatch('success', 'Volunteer registered successfully!')
+                  this.loading = false
+                  this.done = true
+                  store.dispatch('setSignUpState', false)
+                }).catch(error => {
+                this.$store.dispatch('danger',error.response.data)
+                this.loading = false
+                store.dispatch('setSignUpState', false)
+              })
+            })
+            .catch((error) => {
+              this.loading = false
+              this.$store.dispatch('danger', 'Some error occurred! Please try again in a minute.')
+              store.dispatch('setSignUpState', false)
+            })
         })
 
-      this.loading = false
+
     }
   }
 }

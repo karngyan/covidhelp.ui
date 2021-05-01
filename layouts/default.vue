@@ -3,6 +3,7 @@
     <Header />
     <Nuxt />
     <Footer />
+    <Notification />
   </div>
 </template>
 

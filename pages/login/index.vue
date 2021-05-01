@@ -1,13 +1,12 @@
 <template>
 <div>
-  <DonorForm/>
+  volunteer login
 </div>
 </template>
 
 <script>
 export default {
-  name: "index",
-  auth: false,
+  name: "index"
 }
 </script>
 

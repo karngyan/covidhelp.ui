@@ -38,6 +38,7 @@
 <script>
 
 export default {
+  auth: false,
   data() {
     return {
       name: '',
@@ -45,7 +46,7 @@ export default {
       message: '',
       subdomain: 'jharkhand',
       loading: false,
-      done: false
+      done: false,
     }
   },
   watch: {

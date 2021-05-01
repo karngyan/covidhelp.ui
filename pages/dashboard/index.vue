@@ -1,13 +1,13 @@
 <template>
 <div>
-  <DonorForm/>
+  v-dashboard
 </div>
+
 </template>
 
 <script>
 export default {
-  name: "index",
-  auth: false,
+  middleware: 'auth'
 }
 </script>
 

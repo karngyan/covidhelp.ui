@@ -260,8 +260,6 @@ export default {
           this.$store.dispatch('danger', error.response.data)
           this.loading = false
         })
-
-      this.loading = false
     },
   }
 }

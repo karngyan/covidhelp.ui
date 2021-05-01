@@ -1,8 +1,12 @@
 export default {
 
   // nuxt handles invoking this
-  authAction({dispatch, commit}, {authUser, claims}) {
+  authAction({dispatch, state, commit}, {authUser, claims}) {
     console.debug('in auth action')
+    if (state.signUpState) {
+      return
+    }
+
     if (!authUser) {
       dispatch('signOut')
     } else {
@@ -16,7 +20,7 @@ export default {
           }).catch((error) => {
             dispatch('danger', error.toString())
             dispatch('signOut')
-            this.$router.push('/signin')
+            this.$router.push('/login')
         })
       })
     }
@@ -49,6 +53,27 @@ export default {
         commit('setUser', null)
       })
   },
+
+  signUpWithEmailAndPassword({dispatch, commit}, {email, password}) {
+    return new Promise((resolve, reject) => {
+      this.$fire.auth.createUserWithEmailAndPassword(email, password)
+        .then(data => {
+          resolve(data)
+        }).catch((error) => {
+          reject(error)
+      })
+    })
+  },
+
+  setSignUpState({commit}, val) {
+    return new Promise((resolve, reject) => {
+      commit('setSignUpState', val)
+      resolve();
+    })
+  },
+
+
+
   simple({commit}, msg) {
     commit('setSimple', msg)
   },
@@ -97,6 +122,10 @@ export default {
     return new Promise((resolve, reject) => {
       this.$axios.post('/volunteer/create', {
         ...form
+      }, {
+        headers: {
+          'X-Token': form.token
+        }
       }).then((resp) => {
         resolve(resp.data)
       }).catch((error) => {

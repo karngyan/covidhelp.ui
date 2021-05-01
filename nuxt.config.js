@@ -57,10 +57,29 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-
+    '@nuxtjs/firebase',
     ['nuxt-buefy', { css: true }]
   ],
-
+  firebase: {
+    config: {
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      projectId: process.env.PROJECT_ID,
+      storageBucket: process.env.STORAGE_BUCKET,
+      messagingSenderId: process.env.MESSAGING_SENDER_ID,
+      appId: process.env.APP_ID,
+    },
+    services: {
+      auth: {
+        persistence: 'local',
+        initialize: {
+          onAuthStateChangedAction: 'authAction',
+          subscribeManually: false
+        },
+        ssr: false,
+      },
+    },
+  },
   env : {
     baseURL: process.env.BASE_URL || 'http://localhost:8081/api/v1'
   },
@@ -79,6 +98,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    splitChunks: {
+      layout: true
+    },
   },
   tailwindcss: {
     jit: true

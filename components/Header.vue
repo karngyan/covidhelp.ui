@@ -9,8 +9,8 @@
         </nuxt-link>
       </div>
 
-      <nuxt-link to="/feedback" class="justify-center flex items-center">
-        <b-button type="is-primary is-light">Feedback</b-button>
+      <nuxt-link to="/login" class="justify-center flex items-center">
+        <b-button type="is-primary is-light">Sign In</b-button>
       </nuxt-link>
     </div>
   </div>

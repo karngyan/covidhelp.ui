@@ -4,6 +4,7 @@ export default function() {
     user: null,
     simple: null,
     success: null,
-    danger: null
+    danger: null,
+    signUpState: false
   }
 }

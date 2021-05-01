@@ -6,7 +6,8 @@
 
 <script>
 export default {
-  name: "index"
+  name: "index",
+  auth: false,
 }
 </script>
 

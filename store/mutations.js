@@ -18,6 +18,9 @@ export default {
   setDanger(state, msg) {
     state.danger = msg
   },
+  setSignUpState(state, val) {
+    state.signUpState = val
+  },
   setItem(state, {item, id, resource}) {
 
     if (!state[resource]) {
