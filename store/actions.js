@@ -54,6 +54,27 @@ export default {
       })
   },
 
+  signInUserWithEmailAndPassword({dispatch}, {email, password}) {
+    return new Promise((resolve, reject) => {
+      this.$fire.auth.signInWithEmailAndPassword(email, password)
+        .then((userCred) => {
+          const fuid = userCred.user.uid
+          userCred.user.getIdToken(true)
+            .then(token => {
+              dispatch('fetchUser', {fuid, token})
+                .then((user) => {
+                  resolve(user)
+                }).catch(error => {
+                  reject(error)
+              })
+            })
+
+        }).catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   signUpWithEmailAndPassword({dispatch, commit}, {email, password}) {
     return new Promise((resolve, reject) => {
       this.$fire.auth.createUserWithEmailAndPassword(email, password)
