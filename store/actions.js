@@ -149,6 +149,7 @@ export default {
           'X-Token': form.token
         }
       }).then((resp) => {
+        commit('setUser', resp.data)
         resolve(resp.data)
       }).catch((error) => {
         reject(error)
