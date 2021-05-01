@@ -82,7 +82,7 @@
               <a href="#" class="flex-shrink-0 group block">
                 <div class="flex items-center">
                   <div class="rounded-full flex justify-center items-center h-9 w-9 bg-purple-700">
-                    <span v-if="user" class="text-white font-extrabold">{{ (user.volunteer.name.charAt(0) + user.volunteer.name.charAt(1)).toUpperCase() }}</span>
+                    <span class="text-white font-extrabold">{{ (user.volunteer.name.charAt(0) + user.volunteer.name.charAt(1)).toUpperCase() }}</span>
                   </div>
                   <div class="ml-3">
                     <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
@@ -193,7 +193,13 @@
 export default {
   computed: {
     user() {
-      return this.$store.state.user
+      const user = this.$store.state.user
+      return user ? user : {
+        type: 0,
+        volunteer: {
+          name: 'Loading...',
+        }
+      }
     }
   },
   data() {
