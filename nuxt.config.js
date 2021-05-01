@@ -7,14 +7,27 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'jharkhand.covidhelp.page',
+    title: 'Covid Help Community in Jharkhand by BIT Mesra',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Covid Help Community in Jharkhand by BIT Mesra | Get Blood and Plasma Donors' },
+      { name: 'title', content: 'Covid Help Community in Jharkhand by BIT Mesra | Get Blood and Plasma Donors'},
+      { name: 'author', content: 'Gyan Prakash Karn & Vishesh Agrawal | mail@karngyan.com'},
+      { property: 'og:type', content: 'website'},
+      { property: 'og:url', content: 'https://jharkhand.covidhelp.page'},
+      { property: 'og:title', content: 'Covid Help Community in Jharkhand by BIT Mesra'},
+      { property: 'og:description', content: 'Get Blood and Plasma Donors'},
+      { property: 'og:image', content: 'https://jharkhand.covidhelp.page/favicon.ico'},
+
+      { property: 'twitter:card', content: 'https://jharkhand.covidhelp.page/favicon.ico'},
+      { property: 'twitter:url', content: 'https://jharkhand.covidhelp.page'},
+      { property: 'twitter:title', content: 'Covid Help Community in Jharkhand by BIT Mesra'},
+      { property: 'twitter:description', content: 'Get Blood and Plasma Donors'},
+      { property: 'twitter:image', content: 'https://jharkhand.covidhelp.page/favicon.ico'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
