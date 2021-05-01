@@ -1,5 +1,9 @@
 export default function() {
   return {
-    subdomains: []
+    subdomains: [],
+    user: null,
+    simple: null,
+    success: null,
+    danger: null
   }
 }

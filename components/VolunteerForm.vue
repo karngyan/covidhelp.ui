@@ -155,35 +155,15 @@ export default {
       console.debug(form)
       store.dispatch('submitVolunteerForm', form)
         .then(() => {
-          this.success('Volunteer registered successfully!')
+          this.$store.dispatch('success', 'Volunteer registered successfully!')
           this.loading = false
           this.done = true
         }).catch(error => {
-          this.danger(error.response.data)
+          this.$store.dispatch('danger',error.response.data)
           this.loading = false
         })
 
       this.loading = false
-    },
-    simple(msg) {
-      this.$buefy.notification.open({
-        message: msg,
-        position: 'is-bottom-right',
-      })
-    },
-    success(msg) {
-      this.$buefy.notification.open({
-        message: msg,
-        type: 'is-success',
-        position: 'is-bottom-right',
-      })
-    },
-    danger(msg) {
-      this.$buefy.notification.open({
-          message: msg,
-          position: 'is-bottom-right',
-          type: 'is-danger',
-      })
     }
   }
 }

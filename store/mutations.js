@@ -3,10 +3,21 @@ import getDefaultState from "~/store/state";
 
 export default {
 
+  setUser(state, user) {
+    state.user = user
+  },
   setSubdomains(state, subdomains) {
     state.subdomains = subdomains
   },
-
+  setSimple(state, msg) {
+    state.simple = msg
+  },
+  setSuccess(state, msg) {
+    state.success = msg
+  },
+  setDanger(state, msg) {
+    state.danger = msg
+  },
   setItem(state, {item, id, resource}) {
 
     if (!state[resource]) {

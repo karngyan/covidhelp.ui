@@ -190,35 +190,15 @@ export default {
       console.debug(form)
       store.dispatch('submitBeneficiaryForm', form)
         .then(() => {
-          this.success('Donor Request submitted successfully!')
+          this.$store.dispatch('success', 'Donor Request submitted successfully!')
           this.loading = false
           this.done = true
         }).catch(error => {
-          this.danger(error.response.data)
+          this.$store.dispatch('danger',error.response.data)
           this.loading = false
         })
 
       this.loading = false
-    },
-    simple(msg) {
-      this.$buefy.notification.open({
-        message: msg,
-        position: 'is-bottom-right',
-      })
-    },
-    success(msg) {
-      this.$buefy.notification.open({
-        message: msg,
-        type: 'is-success',
-        position: 'is-bottom-right',
-      })
-    },
-    danger(msg) {
-      this.$buefy.notification.open({
-          message: msg,
-          position: 'is-bottom-right',
-          type: 'is-danger',
-      })
     }
   }
 }
