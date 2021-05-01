@@ -144,9 +144,9 @@ const cities = [
 export default {
   data() {
     return {
-      name: 'Gyan',
-      email: 'mail@karngyan.com',
-      phone: '8051005416',
+      name: '',
+      email: '',
+      phone: '',
       whatsappNumber: '',
       gender: 'M',
       bloodGroup: 'A+',
