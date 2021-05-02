@@ -4,6 +4,7 @@
     <div class="flex justify-center space-x-6 md:order-2">
 
       <nuxt-link to="/feedback" class="text-gray-500 hover:text-gray-700">Feedback</nuxt-link>
+      <nuxt-link to="/team" class="text-gray-500 hover:text-gray-700">Team</nuxt-link>
 
       <a href="https://github.com/karngyan/jharkhand.covidhelp.ui" class="text-gray-400 hover:text-gray-500">
         <span class="sr-only">GitHub</span>
