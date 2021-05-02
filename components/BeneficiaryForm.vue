@@ -68,6 +68,15 @@
         <option value="O-">O-</option>
       </b-select>
     </b-field>
+    <b-field>
+      <b-checkbox v-model="oxygenAvailable">
+        Do you have access to an oxygen cylinder?
+      </b-checkbox>
+    </b-field>
+
+    <b-field label="SPO2 Value? (<= 100)">
+      <b-numberinput v-model="oxygenLevel" maxvalue="100" minvalue="0"></b-numberinput>
+    </b-field>
 
     <b-field label="Report Link">
       <b-input placeholder="upload the COVID report on Google drive and share the public link" v-model="reportUrl" type="text"></b-input>
@@ -111,13 +120,15 @@ export default {
       city: 'Ranchi',
       subdomain: 'jharkhand',
       age: 25,
-      whatsappCheck: false,
+      whatsappCheck: true,
       consentToShare: true,
       loading: false,
       cities: cities,
       type: '0',
       reportUrl: '',
       done: false,
+      oxygenAvailable: false,
+      oxygenLevel: 90
     }
   },
   watch: {
@@ -144,6 +155,7 @@ export default {
       const form = {...this.$data}
 
       form.type = parseInt(form.type)
+      form.oxygenLevel = parseInt(form.oxygenLevel)
 
       console.debug(form)
       store.dispatch('submitBeneficiaryForm', form)

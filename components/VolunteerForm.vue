@@ -87,7 +87,7 @@ export default {
       gender: '',
       city: 'Ranchi',
       subdomain: 'jharkhand',
-      whatsappCheck: false,
+      whatsappCheck: true,
       consentToShare: true,
       loading: false,
       cities: cities,

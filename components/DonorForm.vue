@@ -166,7 +166,7 @@ export default {
       symptomFreeDays: 1,
       vaccinated: false,
       vaccinationDate: null,
-      whatsappCheck: false,
+      whatsappCheck: true,
       consentToShare: true,
       loading: false,
       cities: cities,
