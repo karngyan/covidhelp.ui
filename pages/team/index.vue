@@ -22,7 +22,7 @@
               <img class="w-16 h-16 rounded-full lg:w-20 lg:h-20" src="../../assets/karn.jpeg" alt="">
               <div class="font-medium text-lg leading-6 space-y-1">
                 <h3>Gyan Prakash Karn</h3>
-                <p class="text-indigo-600">Lead Dev One</p>
+                <p class="text-indigo-600">Developer</p>
               </div>
             </div>
           </li>
@@ -31,7 +31,7 @@
               <img class="w-16 h-16 rounded-full lg:w-20 lg:h-20" src="../../assets/vishesh.png" alt="">
               <div class="font-medium text-lg leading-6 space-y-1">
                 <h3>Vishesh Agrawal</h3>
-                <p class="text-indigo-600">Lead Dev Two</p>
+                <p class="text-indigo-600">Developer</p>
               </div>
             </div>
           </li>
