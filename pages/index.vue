@@ -22,33 +22,51 @@
     </div>
   </div>
 
-  <div class="relative pb-16">
-    <main class="mt-32 mx-auto max-w-7xl px-4 sm:mt-32">
-      <div class="text-center">
-        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-          <span class="block xl:inline">Help people</span>
-          <span class="block text-purple-600 xl:inline">in need</span>
-        </h1>
-        <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          We are a group of volunteers helping people get over this COVID-19 crisis. We notify donors and beneficiaries via email and sms.
-        </p>
-      </div>
+  <div class="mx-auto z-10 py-28 grid grid-cols-1 gap-6 px-4 sm:px-6 lg:px-8 max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+    <section aria-labelledby="right section" class="lg:col-start-1 lg:col-span-2">
+      <div class="relative pb-16">
+        <main class="mt-32 mx-auto max-w-7xl px-4 sm:mt-32">
+          <div class="text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block xl:inline">Help people</span>
+              <span class="block text-purple-600 xl:inline">in need</span>
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              We are a group of volunteers helping people get over this COVID-19 crisis. We notify donors and beneficiaries via email and sms.
+            </p>
+          </div>
 
-      <div class="flex py-5 items-center justify-center">
-        <span class="relative z-0 inline-flex shadow-sm rounded-md">
-          <nuxt-link to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
-            Become a Donor
-          </nuxt-link>
-          <nuxt-link to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
-            Request Blood/Plasma
-          </nuxt-link>
-          <nuxt-link to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
-            Become a Volunteer
-          </nuxt-link>
-        </span>
+          <div class="flex py-5 items-center justify-center">
+            <span class="relative z-0 inline-flex shadow-sm rounded-md">
+              <nuxt-link to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                Become a Donor
+              </nuxt-link>
+              <nuxt-link to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                Request Blood/Plasma
+              </nuxt-link>
+              <nuxt-link to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                Become a Volunteer
+              </nuxt-link>
+            </span>
+          </div>
+        </main>
       </div>
-    </main>
+    </section>
+    <div class="space-y-2 z-10 lg:col-start-3 lg:col-span-1">
+      <div class="bg-purple-800 shadow-md rounded-lg px-4 py-2 border-b border-gray-200 sm:px-6">
+        <nuxt-link to="/feed" class="animate-pulse relative text-md leading-6 font-bold hover:text-white text-white">
+          Post Feed
+        </nuxt-link>
+      </div>
+      <ul>
+        <nuxt-link to="/feed" class="space-y-1">
+          <PostSmallCard v-for="post in posts" :key="post.id" :post="post"/>
+        </nuxt-link>
+      </ul>
+    </div>
+
   </div>
+
 </div>
 
 <div class="bg-purple-800">
@@ -103,7 +121,8 @@ export default {
     return {
       volunteerCount: '...',
       donorCount: '...',
-      beneficiaryCount: '...'
+      beneficiaryCount: '...',
+      posts: [],
     }
   },
   created() {
@@ -113,6 +132,13 @@ export default {
         this.donorCount = data.donorCount
         this.beneficiaryCount = data.beneficiaryCount
       })
+    this.$store.dispatch('fetchPosts', {tag: '', page: 1, city: ''})
+      .then((data) => {
+        console.debug(data)
+        this.posts = data.posts.slice(0, 3)
+      }).catch(error => {
+        this.$store.dispatch('danger', 'fetch feed failed')
+    })
   }
 }
 </script>
