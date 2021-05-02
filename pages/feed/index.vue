@@ -23,7 +23,14 @@
           <Post v-for="post in posts" :key="post.id" :post="post" />
         </ul>
       </section>
-    </div>
+      <div class="flex items-center justify-center">
+        <button @click="loadMoreClicked" v-if="postData.maxPage !== page" type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Load More
+        </button>
+      </div>
+
+      </div>
+
   </div>
 </div>
 </template>
@@ -76,6 +83,10 @@ export default {
         }).catch((error) => {
           store.dispatch('danger', 'Some error occurred while fetching posts.')
       })
+    },
+    loadMoreClicked() {
+      this.page += 1
+      this.fetchPosts()
     }
   },
   created() {
@@ -85,12 +96,14 @@ export default {
     tags: {
       handler: function() {
         this.posts = []
+        this.page = 1
         this.fetchPosts()
       },
       deep: true
     },
     city() {
       this.posts = []
+      this.page = 1
       this.fetchPosts()
     }
   }

@@ -54,7 +54,8 @@
       </dl>
     </div>
     </div>
-    <VerifyEmail />
+    <VerifyEmail class="flex justify-start pb-4"/>
+    <SlackInvite />
   </div>
 </template>
 

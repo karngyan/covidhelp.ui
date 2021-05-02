@@ -58,7 +58,7 @@
     </div>
   </div>
   <div v-show="done" class="max-w-3xl mx-auto space-y-4">
-    <div class="h-screen space-y-2 -my-10 flex flex-col items-center justify-center relative">
+    <div class="h-screen space-y-2 -py-10 flex flex-col items-center justify-center relative">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Volunteer Registered Successfully!
       </h2>

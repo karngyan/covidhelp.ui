@@ -26,7 +26,7 @@
     <b-button @click="submitForm" :disabled="message.length < 5 || name.length <= 0" type="is-primary" expanded :loading="loading">Submit</b-button>
   </div>
   <div v-show="done" class="max-w-3xl mx-auto space-y-4">
-    <div class="h-screen space-y-2 -my-10 flex flex-col items-center justify-center relative">
+    <div class="h-screen space-y-2 -py-10 flex flex-col items-center justify-center relative">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Thank You for the Feedback!
       </h2>

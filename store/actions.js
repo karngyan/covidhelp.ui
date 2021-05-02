@@ -226,5 +226,32 @@ export default {
         resolve(resp.data)
       }).catch((error) => reject(error))
     })
+  },
+
+  fetchUnverifiedBeneficiaries({state, commit}, {page}) {
+    return new Promise((resolve, reject) => {
+      this.$axios.get('/beneficiary/all', {
+        params: {
+          page: page ? page : 1,
+        },
+        headers: {
+          'X-User-ApiKey': state.user.apiKey
+        }
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
+  },
+
+  verifyBeneficiary({state}, {id}) {
+    return new Promise((resolve, reject) => {
+      this.$axios.post('/beneficiary/' + id + '/verify', {},{
+        headers: {
+          'X-User-ApiKey': state.user.apiKey
+        }
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
   }
 }
