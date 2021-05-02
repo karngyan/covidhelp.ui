@@ -33,6 +33,9 @@
                     Report Url
                   </th>
                   <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    SPO2
+                  </th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Action
                   </th>
                 </tr>
@@ -53,6 +56,9 @@
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <a class="underline text-purple-600" :href="beneficiary.reportUrl" target="_blank">{{ beneficiary.reportUrl }}</a>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {{ beneficiary.oxygenLevel  + ' %'}}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <b-button size="is-small" @click="verify(beneficiary)" type="is-primary is-light" :loading="beneficiary.loading" :disabled="beneficiary.disabled">{{ beneficiary.text }}</b-button>
