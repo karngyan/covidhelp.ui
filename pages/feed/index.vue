@@ -24,7 +24,7 @@
         </ul>
       </section>
       <div class="flex items-center justify-center">
-        <button @click="loadMoreClicked" v-if="postData.maxPage !== page" type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button @click="loadMoreClicked" v-if="postData.maxPage !== page && postData.maxPage > 1" type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Load More
         </button>
       </div>
@@ -77,8 +77,6 @@ export default {
         .then((data) => {
           this.postData = data
           this.posts.push(...data.posts)
-
-          console.debug(this.posts)
           store.dispatch('success', 'Posts fetch success.')
         }).catch((error) => {
           store.dispatch('danger', 'Some error occurred while fetching posts.')

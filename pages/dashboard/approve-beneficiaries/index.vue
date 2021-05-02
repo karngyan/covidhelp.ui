@@ -166,7 +166,15 @@ export default {
     }
   },
   created() {
-    this.fetchData()
+    if (this.user) {
+      this.fetchData()
+    }
+  },
+  watch: {
+    user() {
+      this.fetchData()
+    }
   }
+
 }
 </script>
