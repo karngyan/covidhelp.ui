@@ -144,49 +144,7 @@
 </template>
 
 <script>
-
-const cities = [
-  {"city":"Amlabad", "state":"Jharkhand"},
-	{"city":"Ara", "state":"Jharkhand"},
-	{"city":"Barughutu", "state":"Jharkhand"},
-	{"city":"Bokaro Steel City", "state":"Jharkhand"},
-	{"city":"Chaibasa", "state":"Jharkhand"},
-	{"city":"Chakradharpur", "state":"Jharkhand"},
-	{"city":"Chandrapura", "state":"Jharkhand"},
-	{"city":"Chatra", "state":"Jharkhand"},
-	{"city":"Chirkunda", "state":"Jharkhand"},
-	{"city":"Churi", "state":"Jharkhand"},
-	{"city":"Daltonganj", "state":"Jharkhand"},
-	{"city":"Deoghar", "state":"Jharkhand"},
-	{"city":"Dhanbad", "state":"Jharkhand"},
-	{"city":"Dumka", "state":"Jharkhand"},
-	{"city":"Garhwa", "state":"Jharkhand"},
-	{"city":"Ghatshila", "state":"Jharkhand"},
-	{"city":"Giridih", "state":"Jharkhand"},
-	{"city":"Godda", "state":"Jharkhand"},
-	{"city":"Gomoh", "state":"Jharkhand"},
-	{"city":"Gumia", "state":"Jharkhand"},
-	{"city":"Gumla", "state":"Jharkhand"},
-	{"city":"Hazaribag", "state":"Jharkhand"},
-	{"city":"Hussainabad", "state":"Jharkhand"},
-	{"city":"Jamshedpur", "state":"Jharkhand"},
-	{"city":"Jamtara", "state":"Jharkhand"},
-	{"city":"Jhumri Tilaiya", "state":"Jharkhand"},
-	{"city":"Khunti", "state":"Jharkhand"},
-	{"city":"Lohardaga", "state":"Jharkhand"},
-	{"city":"Madhupur", "state":"Jharkhand"},
-	{"city":"Mihijam", "state":"Jharkhand"},
-	{"city":"Musabani", "state":"Jharkhand"},
-	{"city":"Pakaur", "state":"Jharkhand"},
-	{"city":"Patratu", "state":"Jharkhand"},
-	{"city":"Phusro", "state":"Jharkhand"},
-	{"city":"Ramngarh", "state":"Jharkhand"},
-	{"city":"Ranchi", "state":"Jharkhand"},
-	{"city":"Sahibganj", "state":"Jharkhand"},
-	{"city":"Saunda", "state":"Jharkhand"},
-	{"city":"Simdega", "state":"Jharkhand"},
-	{"city":"Tenu Dam-cum- Kathhara", "state":"Jharkhand"}
-]
+import cities from "@/assets/cities"
 
 export default {
   data() {

@@ -2,6 +2,13 @@
 <div class="bg-gray-50">
   <div class="mx-auto py-28 grid grid-cols-1 gap-6 px-4 sm:px-6 lg:px-8 max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
     <section aria-labelledby="right section" class="lg:col-start-1 lg:col-span-1">
+      <b-field label="City">
+        <b-select placeholder="Select one" expanded v-model="city">
+          <option v-for="city in cities" :value="city.city" :key="city.city">{{ city.city }}</option>
+        </b-select>
+      </b-field>
+      <div @click="city = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">clear city</div>
+
       <b-field label="Filter" class="overflow-auto">
         <div class="flex flex-col">
           <span v-for="tag in tags" :key="tag.identifier">
@@ -23,6 +30,7 @@
 
 <script>
 import tags from '@/assets/tags'
+import cities from '@/assets/cities'
 
 export default {
   layout: 'default',
@@ -48,7 +56,9 @@ export default {
         maxPage: 1
       },
       tag: '',
-      page: 1
+      page: 1,
+      city: '',
+      cities: cities,
     }
   },
   methods: {
@@ -56,11 +66,10 @@ export default {
       const store = this.$store
       this.tag = this.tagString
       console.debug('fetching posts')
-      store.dispatch('fetchPosts', this.tag, this.page)
+      store.dispatch('fetchPosts', {tag: this.tag, page: this.page, city: this.city})
         .then((data) => {
           this.postData = data
           this.posts.push(...data.posts)
-          console.debug('fetched posts', data)
 
           console.debug(this.posts)
           store.dispatch('success', 'Posts fetch success.')
@@ -79,6 +88,10 @@ export default {
         this.fetchPosts()
       },
       deep: true
+    },
+    city() {
+      this.posts = []
+      this.fetchPosts()
     }
   }
 }

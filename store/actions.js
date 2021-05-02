@@ -211,16 +211,16 @@ export default {
     })
   },
 
-  fetchPosts({state, commit}, tag, page) {
+  fetchPosts({state, commit}, {tag, page, city}) {
     return new Promise((resolve, reject) => {
-      if (tag.length === 0) {
-        tag = null
-      }
+      if (tag.length === 0) tag = null
+      if (city.length === 0) city = null
       this.$axios.get('/post/all', {
         params: {
           page: page ? page : 1,
           filterBy: tag ? 'filterByTag' : '',
-          filterValue: tag ? tag : ''
+          filterValue: tag ? tag : '',
+          city: city ? city : '',
         }
       }).then((resp) => {
         resolve(resp.data)

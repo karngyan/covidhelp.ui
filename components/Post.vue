@@ -24,6 +24,9 @@
       <div class="mt-2 show-white-space text-sm text-gray-700 space-y-4">{{ post.description.trim() }}</div>
       <div class="mt-2 flex justify-between space-x-2">
         <div class="flex space-x-2">
+          <span v-if="post.city" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+            {{ post.city }}
+          </span>
           <span v-for="tag in tags" :key="tag" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
             {{ tag }}
           </span>

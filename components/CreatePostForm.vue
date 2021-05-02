@@ -28,6 +28,12 @@
       </div>
     </b-field>
 
+    <b-field label="City">
+      <b-select placeholder="Select one" expanded v-model="city">
+        <option v-for="city in cities" :value="city.city" :key="city.city">{{ city.city }}</option>
+      </b-select>
+    </b-field>
+
     <div class="submit py-4">
       <b-field>
         <b-checkbox v-model="verifiedCheck">
@@ -43,6 +49,7 @@
 
 <script>
 import tags from '@/assets/tags'
+import cities from "@/assets/cities"
 
 export default {
   name: "CreatePostForm",
@@ -66,6 +73,8 @@ export default {
       loading: false,
       verifiedCheck: false,
       tags: tags,
+      city: '',
+      cities: cities
     }
   },
   methods: {
