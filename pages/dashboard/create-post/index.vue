@@ -1,12 +1,18 @@
 <template>
-<div>
-  create-post
+<div class="my-10">
+  <VerifyEmail/>
+  <CreatePostForm />
 </div>
 </template>
 
 <script>
 export default {
-  layout: 'dashboard'
+  layout: 'dashboard',
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  }
 }
 </script>
 

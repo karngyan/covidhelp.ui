@@ -167,5 +167,64 @@ export default {
         reject(error)
       })
     })
+  },
+
+  sendVerificationEmail({dispatch, state}) {
+    return new Promise((resolve, reject) => {
+      const user = state.user
+      const apiKey = user.apiKey
+      this.$fire.auth.currentUser.getIdToken(true)
+        .then((token) => {
+          this.$axios.post('/users/' + user.firebaseUid + '/verify-email', {}, {
+            headers: {
+              'X-Token': token
+            }
+          }).then((resp) => {
+            dispatch('success', resp.data)
+            resolve(resp)
+          }).catch((error) => {
+            if (error.response?.data)
+              dispatch('danger', error.response.data)
+            else
+              dispatch('danger', 'Some error occurred! Please try again!')
+            reject(error)
+          })
+      })
+    })
+  },
+
+  createPost({state}, body) {
+    return new Promise((resolve, reject) => {
+      const user = state.user
+      const apiKey = user.apiKey
+      console.debug(apiKey)
+
+      this.$axios.post('/post/create', {
+        ...body
+      }, {
+        headers: {
+          'X-User-ApiKey': apiKey
+        }
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
+  },
+
+  fetchPosts({state, commit}, tag, page) {
+    return new Promise((resolve, reject) => {
+      if (tag.length === 0) {
+        tag = null
+      }
+      this.$axios.get('/post/all', {
+        params: {
+          page: page ? page : 1,
+          filterBy: tag ? 'filterByTag' : '',
+          filterValue: tag ? tag : ''
+        }
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
   }
 }

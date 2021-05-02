@@ -81,9 +81,7 @@
             <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
               <a href="#" class="flex-shrink-0 group block">
                 <div class="flex items-center">
-                  <div class="rounded-full flex justify-center items-center h-9 w-9 bg-purple-700">
-                    <span class="text-white font-extrabold">{{ (user.volunteer.name.charAt(0) + user.volunteer.name.charAt(1)).toUpperCase() }}</span>
-                  </div>
+                  <UserCircle :name="user.volunteer.name"/>
                   <div class="ml-3">
                     <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
                       {{ titleCase(user.volunteer.name ) }}
@@ -175,9 +173,6 @@
         <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none">
           <div class="">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-            </div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               <Nuxt />
             </div>
           </div>
@@ -204,7 +199,7 @@ export default {
   },
   data() {
     return {
-      menuOpen: true
+      menuOpen: false
     }
   },
   methods: {
