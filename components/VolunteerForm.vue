@@ -43,6 +43,10 @@
       <b-numberinput v-model="hoursPerWeek"></b-numberinput>
     </b-field>
 
+    <b-field label="How can you contribute? (optional)" message="Include any specifics like Plasma, Blood, ICU Bed, NGOs.">
+        <b-input maxlength="500" type="textarea" v-model="details"></b-input>
+    </b-field>
+
     <b-field label="Enter new password (min length: 6)">
       <b-input type="password" password-reveal v-model="password"></b-input>
     </b-field>
@@ -90,7 +94,8 @@ export default {
       hoursPerWeek: 10,
       done: false,
       password: '',
-      token: ''
+      token: '',
+      details: ''
     }
   },
   watch: {
