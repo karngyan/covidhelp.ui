@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">covidhelp.ui</h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d2d8e932-8da8-401a-b782-f060ad88c7e6/deploy-status)](https://app.netlify.com/sites/thirsty-brown-3401a1/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3bbdfe41-1ec6-4bbe-be16-acffc5a056cb/deploy-status)](https://app.netlify.com/sites/covidhelp-page/deploys)
 
 ## Build Setup
 
