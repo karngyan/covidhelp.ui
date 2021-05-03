@@ -5,6 +5,12 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3bbdfe41-1ec6-4bbe-be16-acffc5a056cb/deploy-status)](https://app.netlify.com/sites/covidhelp-page/deploys)
 
+## Hero
+
+<p align="center">
+  <img height="400px" src="https://api.covidhelp.page/swagger/hero.png" />
+</p>
+
 ## Build Setup
 
 ```bash
