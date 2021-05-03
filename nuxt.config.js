@@ -18,16 +18,16 @@ export default {
       { name: 'title', content: 'Covid Help Community in Jharkhand | Get Blood and Plasma Donors'},
       { name: 'author', content: 'Gyan Prakash Karn & Vishesh Agrawal | mail@karngyan.com'},
       { property: 'og:type', content: 'website'},
-      { property: 'og:url', content: 'https://jharkhand.covidhelp.page'},
+      { property: 'og:url', content: 'https://covidhelp.page'},
       { property: 'og:title', content: 'Covid Help Community in Jharkhand'},
       { property: 'og:description', content: 'Get Blood and Plasma Donors'},
-      { property: 'og:image', content: 'https://jharkhand.covidhelp.page/covidhelp.png'},
+      { property: 'og:image', content: 'https://covidhelp.page/covidhelp.png'},
 
-      { property: 'twitter:card', content: 'https://jharkhand.covidhelp.page/covidhelp.png'},
+      { property: 'twitter:card', content: 'https://covidhelp.page/covidhelp.png'},
       { property: 'twitter:url', content: 'https://jharkhand.covidhelp.page'},
       { property: 'twitter:title', content: 'Covid Help Community in Jharkhand'},
       { property: 'twitter:description', content: 'Get Blood and Plasma Donors'},
-      { property: 'twitter:image', content: 'https://jharkhand.covidhelp.page/covidhelp.png'},
+      { property: 'twitter:image', content: 'https://covidhelp.page/covidhelp.png'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
