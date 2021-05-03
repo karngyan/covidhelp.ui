@@ -253,5 +253,23 @@ export default {
         resolve(resp.data)
       }).catch((error) => reject(error))
     })
+  },
+
+  fetchVolunteersTeam({state}) {
+    return new Promise((resolve, reject) => {
+
+      if (state.volunteers.length > 0) {
+        resolve(state.volunteers)
+        return
+      }
+
+      this.$axios.get('/volunteer/all/team')
+        .then((resp) => {
+          resolve(resp.data.volunteers)
+        }).catch((error) => {
+          reject(error)
+      })
+    })
   }
+
 }

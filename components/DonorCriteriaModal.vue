@@ -8,7 +8,7 @@
     🧬 Women must not have conceived a child.
     🧬 Do not have high blood pressure.
     🧬 Are between the age of 18 & 65.
-    🧬 Have have recovered from multiple symptoms.
+    🧬 Have recovered from multiple symptoms.
     🧬 Do not have diabetes.
     🧬 Are above 55 kgs.
     🧬 Do not have Thyroid.

@@ -18,6 +18,9 @@ export default {
   setSignUpState(state, val) {
     state.signUpState = val
   },
+  setVolunteers(state, volunteers) {
+    state.volunteers = volunteers
+  },
   setItem(state, {item, id, resource}) {
 
     if (!state[resource]) {

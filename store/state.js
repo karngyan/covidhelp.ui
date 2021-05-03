@@ -4,6 +4,7 @@ export default function() {
     simple: null,
     success: null,
     danger: null,
-    signUpState: false
+    signUpState: false,
+    volunteers: []
   }
 }
