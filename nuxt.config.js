@@ -7,27 +7,27 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Covid Help Community in Jharkhand by BIT Mesra',
+    title: 'Covid Help Community in Jharkhand',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Covid Help Community in Jharkhand by BIT Mesra | Get Blood and Plasma Donors' },
-      { name: 'title', content: 'Covid Help Community in Jharkhand by BIT Mesra | Get Blood and Plasma Donors'},
+      { hid: 'description', name: 'description', content: 'Covid Help Community in Jharkhand | Get Blood and Plasma Donors' },
+      { name: 'title', content: 'Covid Help Community in Jharkhand | Get Blood and Plasma Donors'},
       { name: 'author', content: 'Gyan Prakash Karn & Vishesh Agrawal | mail@karngyan.com'},
       { property: 'og:type', content: 'website'},
       { property: 'og:url', content: 'https://jharkhand.covidhelp.page'},
-      { property: 'og:title', content: 'Covid Help Community in Jharkhand by BIT Mesra'},
+      { property: 'og:title', content: 'Covid Help Community in Jharkhand'},
       { property: 'og:description', content: 'Get Blood and Plasma Donors'},
-      { property: 'og:image', content: 'https://jharkhand.covidhelp.page/favicon.ico'},
+      { property: 'og:image', content: 'https://jharkhand.covidhelp.page/covidhelp.png'},
 
-      { property: 'twitter:card', content: 'https://jharkhand.covidhelp.page/favicon.ico'},
+      { property: 'twitter:card', content: 'https://jharkhand.covidhelp.page/covidhelp.png'},
       { property: 'twitter:url', content: 'https://jharkhand.covidhelp.page'},
-      { property: 'twitter:title', content: 'Covid Help Community in Jharkhand by BIT Mesra'},
+      { property: 'twitter:title', content: 'Covid Help Community in Jharkhand'},
       { property: 'twitter:description', content: 'Get Blood and Plasma Donors'},
-      { property: 'twitter:image', content: 'https://jharkhand.covidhelp.page/favicon.ico'},
+      { property: 'twitter:image', content: 'https://jharkhand.covidhelp.page/covidhelp.png'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
