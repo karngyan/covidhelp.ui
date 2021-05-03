@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TheBanner/>
     <TheNavbar />
     <Nuxt />
     <TheFooter />
