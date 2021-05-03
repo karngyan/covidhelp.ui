@@ -4,7 +4,9 @@
 <h1 align="center">covidhelp.ui</h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3bbdfe41-1ec6-4bbe-be16-acffc5a056cb/deploy-status)](https://app.netlify.com/sites/covidhelp-page/deploys)
-
+<a href="https://join.slack.com/t/covid-help-india/shared_invite/zt-psrs4sdu-joQRAhwmwLx1b56UTl84zw">
+  <img src="https://img.shields.io/badge/Covid%20Help%20India-Join%20Slack-blue" alt="Join Covid Help India Slack"/>
+</a>
 ## Hero
 
 <p align="center">
