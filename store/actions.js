@@ -105,9 +105,9 @@ export default {
   danger({commit}, msg) {
     commit('setDanger', msg)
   },
-  fetchSubdomainDetails({commit}, {subdomain}) {
+  fetchOverallStats({commit}) {
     return new Promise((resolve, reject) => {
-      this.$axios.get('/subdomain/' + subdomain)
+      this.$axios.get('/stats')
         .then((resp) => {
           resolve(resp.data)
         }).catch((error) => {
@@ -211,16 +211,16 @@ export default {
     })
   },
 
-  fetchPosts({state, commit}, {tag, page, city}) {
+  fetchPosts({commit}, {tag, page, city, state}) {
     return new Promise((resolve, reject) => {
       if (tag.length === 0) tag = null
       if (city.length === 0) city = null
       this.$axios.get('/post/all', {
         params: {
           page: page ? page : 1,
-          filterBy: tag ? 'filterByTag' : '',
-          filterValue: tag ? tag : '',
+          tag: tag ? tag : '',
           city: city ? city : '',
+          state: state ? state : ''
         }
       }).then((resp) => {
         resolve(resp.data)

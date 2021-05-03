@@ -5,7 +5,7 @@
       <div class="flex px-2 lg:px-0">
         <nuxt-link to="/" class="flex-shrink-0 flex items-center space-x-1">
           <Logo class="text-purple-700 h-10 w-10" alt="Logo" />
-          <span class="font-bold">Jharkhand Covid Help</span>
+          <span class="font-bold">Covid Help India</span>
         </nuxt-link>
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
           <nuxt-link v-show="$store.state.user"  to="/dashboard" class="dark border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">

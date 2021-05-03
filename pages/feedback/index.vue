@@ -43,7 +43,6 @@ export default {
       name: '',
       email: '',
       message: '',
-      subdomain: 'jharkhand',
       loading: false,
       done: false,
     }

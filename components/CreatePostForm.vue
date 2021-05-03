@@ -28,9 +28,15 @@
       </div>
     </b-field>
 
+    <b-field label="State">
+      <b-select placeholder="Select one" expanded v-model="state">
+        <option v-for="state in states" :value="state" :key="state">{{ state }}</option>
+      </b-select>
+    </b-field>
+
     <b-field label="City">
       <b-select placeholder="Select one" expanded v-model="city">
-        <option v-for="city in cities" :value="city.city" :key="city.city">{{ city.city }}</option>
+        <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
       </b-select>
     </b-field>
 
@@ -49,7 +55,7 @@
 
 <script>
 import tags from '@/assets/tags'
-import cities from "@/assets/cities"
+import stateCity from "@/assets/state-city"
 
 export default {
   name: "CreatePostForm",
@@ -62,6 +68,9 @@ export default {
       })
       this.tag = res
       return res
+    },
+    cities() {
+      return stateCity[this.state]
     }
   },
   data() {
@@ -73,8 +82,9 @@ export default {
       loading: false,
       verifiedCheck: false,
       tags: tags,
-      city: '',
-      cities: cities
+      city: 'Ranchi*',
+      state: 'Jharkhand',
+      states: Object.keys(stateCity),
     }
   },
   methods: {

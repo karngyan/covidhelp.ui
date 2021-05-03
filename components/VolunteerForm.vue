@@ -33,9 +33,15 @@
       </b-checkbox>
     </b-field>
 
+    <b-field label="State">
+      <b-select placeholder="Select one" expanded v-model="state">
+        <option v-for="state in states" :value="state" :key="state">{{ state }}</option>
+      </b-select>
+    </b-field>
+
     <b-field label="City">
       <b-select placeholder="Select one" expanded v-model="city">
-        <option v-for="city in cities" :value="city.city" :key="city.city">{{ city.city }}</option>
+        <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
       </b-select>
     </b-field>
 
@@ -75,9 +81,14 @@
 </template>
 
 <script>
-import cities from "@/assets/cities"
+import stateCity from "@/assets/state-city"
 
 export default {
+  computed: {
+    cities() {
+      return stateCity[this.state]
+    }
+  },
   data() {
     return {
       name: '',
@@ -85,12 +96,12 @@ export default {
       phone: '',
       whatsappNumber: '',
       gender: '',
-      city: 'Ranchi',
-      subdomain: 'jharkhand',
+      city: 'Ranchi*',
+      state: 'Jharkhand',
+      states: Object.keys(stateCity),
       whatsappCheck: true,
       consentToShare: true,
       loading: false,
-      cities: cities,
       hoursPerWeek: 10,
       done: false,
       password: '',

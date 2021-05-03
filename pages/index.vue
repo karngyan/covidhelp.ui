@@ -129,7 +129,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch('fetchSubdomainDetails', {subdomain: 'jharkhand'})
+    this.$store.dispatch('fetchOverallStats')
       .then((data) => {
         this.volunteerCount = data.volunteerCount
         this.donorCount = data.donorCount

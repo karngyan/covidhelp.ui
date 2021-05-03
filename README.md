@@ -1,7 +1,7 @@
 <p align="center">
   <img height="50px" src="https://covidhelp.page/covidhelp.png" />
 </p>
-<h1 align="center">jharkhand.covidhelp.ui</h1>
+<h1 align="center">covidhelp.ui</h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d2d8e932-8da8-401a-b782-f060ad88c7e6/deploy-status)](https://app.netlify.com/sites/thirsty-brown-3401a1/deploys)
 

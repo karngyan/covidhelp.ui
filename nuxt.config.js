@@ -7,25 +7,25 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Covid Help Community in Jharkhand',
+    title: 'Covid Help Community | India | Youth Initiative',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Covid Help Community in Jharkhand | Get Blood and Plasma Donors' },
-      { name: 'title', content: 'Covid Help Community in Jharkhand | Get Blood and Plasma Donors'},
+      { hid: 'description', name: 'description', content: 'Covid Help Community | India | Youth Initiative | Get Blood and Plasma Donors' },
+      { name: 'title', content: 'Covid Help Community | India | Youth Initiative | Get Blood and Plasma Donors'},
       { name: 'author', content: 'Gyan Prakash Karn & Vishesh Agrawal | mail@karngyan.com'},
       { property: 'og:type', content: 'website'},
       { property: 'og:url', content: 'https://covidhelp.page'},
-      { property: 'og:title', content: 'Covid Help Community in Jharkhand'},
+      { property: 'og:title', content: 'Covid Help Community | India | Youth Initiative'},
       { property: 'og:description', content: 'Get Blood and Plasma Donors'},
       { property: 'og:image', content: 'https://covidhelp.page/covidhelp.png'},
 
       { property: 'twitter:card', content: 'https://covidhelp.page/covidhelp.png'},
-      { property: 'twitter:url', content: 'https://jharkhand.covidhelp.page'},
-      { property: 'twitter:title', content: 'Covid Help Community in Jharkhand'},
+      { property: 'twitter:url', content: 'https://covidhelp.page'},
+      { property: 'twitter:title', content: 'Covid Help Community | India | Youth Initiative'},
       { property: 'twitter:description', content: 'Get Blood and Plasma Donors'},
       { property: 'twitter:image', content: 'https://covidhelp.page/covidhelp.png'},
     ],
@@ -33,7 +33,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://analytics.lookatx.dev/js/plausible.js', async: true, defer: true, 'data-domain': 'jharkhand.covidhelp.page' }
+      { src: 'https://analytics.lookatx.dev/js/plausible.js', async: true, defer: true, 'data-domain': 'covidhelp.page' }
     ]
   },
 

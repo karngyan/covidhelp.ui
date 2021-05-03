@@ -27,6 +27,9 @@
           <span v-if="post.city" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
             {{ post.city }}
           </span>
+          <span v-if="post.state" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+            {{ post.state }}
+          </span>
           <span v-for="tag in tags" :key="tag" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
             {{ tag }}
           </span>

@@ -2,11 +2,19 @@
 <div class="bg-gray-50">
   <div class="mx-auto py-28 grid grid-cols-1 gap-6 px-4 sm:px-6 lg:px-8 max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
     <section aria-labelledby="right section" class="lg:col-start-1 lg:col-span-1">
-      <b-field label="City">
-        <b-select placeholder="Select one" expanded v-model="city">
-          <option v-for="city in cities" :value="city.city" :key="city.city">{{ city.city }}</option>
+      <b-field label="State">
+        <b-select placeholder="Select one" expanded v-model="state">
+          <option v-for="state in states" :value="state" :key="state">{{ state }}</option>
         </b-select>
       </b-field>
+      <div @click="state = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">clear state</div>
+
+      <b-field label="City">
+        <b-select placeholder="Select one" expanded v-model="city">
+          <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
+        </b-select>
+      </b-field>
+
       <div @click="city = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">clear city</div>
 
       <b-field label="Filter" class="overflow-auto">
@@ -37,7 +45,7 @@
 
 <script>
 import tags from '@/assets/tags'
-import cities from '@/assets/cities'
+import stateCity from "@/assets/state-city"
 
 export default {
   layout: 'default',
@@ -50,6 +58,9 @@ export default {
       })
       this.tag = res
       return res
+    },
+    cities() {
+      return stateCity[this.state]
     }
   },
   data() {
@@ -65,7 +76,8 @@ export default {
       tag: '',
       page: 1,
       city: '',
-      cities: cities,
+      state: '',
+      states: Object.keys(stateCity),
     }
   },
   methods: {
@@ -73,11 +85,11 @@ export default {
       const store = this.$store
       this.tag = this.tagString
       console.debug('fetching posts')
-      store.dispatch('fetchPosts', {tag: this.tag, page: this.page, city: this.city})
+      store.dispatch('fetchPosts', {tag: this.tag, page: this.page, city: this.city, state: this.state})
         .then((data) => {
           this.postData = data
           this.posts.push(...data.posts)
-          store.dispatch('success', 'Posts fetch success.')
+          // store.dispatch('success', 'Posts fetch success.')
         }).catch((error) => {
           store.dispatch('danger', 'Some error occurred while fetching posts.')
       })
@@ -100,6 +112,11 @@ export default {
       deep: true
     },
     city() {
+      this.posts = []
+      this.page = 1
+      this.fetchPosts()
+    },
+    state() {
       this.posts = []
       this.page = 1
       this.fetchPosts()
