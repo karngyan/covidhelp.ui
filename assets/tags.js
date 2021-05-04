@@ -14,5 +14,6 @@ export default [
   {status: false, text: 'Home Care, Nurse', identifier: 'homeCare'},
   {status: false, text: 'Elder Care', identifier: 'elderCare'},
   {status: false, text: 'Oxygen Concentrator', identifier: 'oxygenConcentrator'},
+  {status: false, text: 'Remdesivir', identifier: 'remdesivir'},
   {status: false, text: 'Other', identifier: 'other'}
 ]
