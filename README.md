@@ -22,10 +22,6 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
-$ yarn build
-$ yarn start
-
 # generate static project
 $ yarn generate
 ```
@@ -39,7 +35,11 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Note
+
+The backend is in a private repository. This directly consumes the api. What we expect from developers is to either add information thats publicly available or consume some public API to add on to the info on the website. If you're interested in adding an API. Drop us a message on Slack.
 
 ## License
 
 Distributed under the AGPL-3.0 License . See `LICENSE` for more information.
+
