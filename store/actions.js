@@ -199,7 +199,7 @@ export default {
       const apiKey = user.apiKey
       console.debug(apiKey)
 
-      this.$axios.post('/post/create', {
+      this.$axios.post('/post', {
         ...body
       }, {
         headers: {
@@ -215,7 +215,7 @@ export default {
     return new Promise((resolve, reject) => {
       if (tag.length === 0) tag = null
       if (city.length === 0) city = null
-      this.$axios.get('/post/all', {
+      this.$axios.get('/post', {
         params: {
           page: page ? page : 1,
           tag: tag ? tag : '',
@@ -223,6 +223,89 @@ export default {
           state: state ? state : ''
         }
       }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
+  },
+
+  fetchAllPostsForUser({commit, state}, {page}) {
+    return new Promise((resolve, reject) => {
+      if (!page) {
+        page = 1
+      }
+      let params = {page: page}
+      const user = state.user
+      const key = user.apiKey
+      this.$axios.get('/post/user/all', {
+        headers: {
+          'X-User-ApiKey': key
+        },
+        params: params
+      }).then((resp) => {
+        commit('setPostsByUser', resp.data.posts)
+        console.debug('posts: ', resp.data)
+        resolve(resp.data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
+  },
+
+  deletePost({commit, state}, {pid}) {
+    return new Promise((resolve, reject) => {
+      if (!pid) {
+        reject(new Error('post id not provided'))
+        return
+      }
+      const user = state.user
+      const key = user.apiKey
+      this.$axios.delete('/post/' + pid, {
+        headers: {
+          'X-User-ApiKey': key
+        },
+      }).then((resp) => {
+        commit('deleteUserPost', pid)
+        resolve(resp.data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
+  },
+
+  updatePost({state, commit}, body) {
+    return new Promise((resolve, reject) => {
+      const user = state.user
+      const apiKey = user.apiKey
+      console.debug(apiKey)
+      this.$axios.put('/post/' + body.id, {
+        ...body
+      }, {
+        headers: {
+          'X-User-ApiKey': apiKey
+        }
+      }).then((resp) => {
+        commit('updateUserPost', resp.data)
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
+  },
+
+  fetchPost({state, commit}, {pid}) {
+    return new Promise((resolve, reject) => {
+      const user = state.user
+      const apiKey = user.apiKey
+      console.debug(apiKey)
+      const xpost = state.postsByUser.find(post => post.id === pid)
+      if (xpost) {
+        resolve(xpost)
+        return
+      }
+      this.$axios.get('/post/' + pid, {
+        headers: {
+          'X-User-ApiKey': apiKey
+        }
+      }).then((resp) => {
+        commit('updateUserPost', resp.data)
         resolve(resp.data)
       }).catch((error) => reject(error))
     })

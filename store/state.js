@@ -5,6 +5,7 @@ export default function() {
     success: null,
     danger: null,
     signUpState: false,
-    volunteers: []
+    volunteers: [],
+    postsByUser: [],
   }
 }

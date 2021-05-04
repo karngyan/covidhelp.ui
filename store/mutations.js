@@ -21,6 +21,22 @@ export default {
   setVolunteers(state, volunteers) {
     state.volunteers = volunteers
   },
+  setPostsByUser(state, posts) {
+    state.postsByUser = posts
+  },
+  deleteUserPost(state, pid) {
+    const post = state.postsByUser.find(post => post.id === pid)
+    if (post) {
+      state.postsByUser.splice(state.postsByUser.indexOf(post), 1)
+    }
+  },
+  updateUserPost(state, newPost) {
+    const post = state.postsByUser.find(post => post.id === newPost.id)
+    if (post) {
+       const newPost = {...post}
+       Object.assign(post, newPost)
+    }
+  },
   setItem(state, {item, id, resource}) {
 
     if (!state[resource]) {

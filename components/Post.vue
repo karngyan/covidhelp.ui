@@ -35,7 +35,14 @@
           </span>
         </div>
         <div class="flex text-sm">
-          <span class="inline-flex items-center text-sm">
+          <span v-show="actions" class="inline-flex items-center space-x-6 text-sm">
+            <svg @click="updatePost" xmlns="http://www.w3.org/2000/svg" class="h-5 cursor-pointer w-5 text-gray-400 hover:text-purple-700" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+              <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+            </svg>
+            <svg @click="deletePost" xmlns="http://www.w3.org/2000/svg" class="h-5 cursor-pointer w-5 text-gray-400 hover:text-purple-700" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
           </span>
         </div>
       </div>
@@ -52,11 +59,15 @@ export default {
     post: {
       type: Object,
       required: true
+    },
+    actions: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     posted() {
-      return formatDistance(new Date(Math.floor(this.post.created/1e6)), new Date(), {addSuffix: true})
+      return formatDistance(new Date(Math.floor(this.post.updated/1e6)), new Date(), {addSuffix: true})
     },
     tags() {
       const customTags = []
@@ -68,6 +79,22 @@ export default {
         }
       })
       return customTags
+    }
+  },
+  methods: {
+    deletePost() {
+      const pid = this.post.id
+      console.debug('deleting', pid)
+      const store = this.$store
+      store.dispatch('deletePost', {pid: pid})
+        .then(() => {
+          store.dispatch('success', 'post deleted')
+        }).catch(() => {
+          store.dispatch('danger', 'post was not deleted')
+      })
+    },
+    updatePost() {
+      this.$router.push('/dashboard/posts/' + this.post.id)
     }
   },
   created() {
