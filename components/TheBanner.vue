@@ -4,10 +4,10 @@
     <div class="pr-16 sm:text-center sm:px-16">
       <p class="font-medium text-white">
         <span class="md:hidden">
-          Right now in Bihar & Jharkhand!
+          Right now in Bihar, Jharkhand, Delhi & UP!
         </span>
         <span class="hidden md:inline">
-          Due to limited availability of volunteers! We're only active in Bihar & Jharkhand.
+          [Update] We are live in Bihar, Jharkhand, Delhi & UP!
         </span>
       </p>
     </div>
