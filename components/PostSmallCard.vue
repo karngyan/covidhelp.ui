@@ -9,7 +9,7 @@
       </div>
       <div class="mt-1 show-white-space text-sm text-gray-700 space-y-4">{{ truncateString(post.description.trim(), 20) }}</div>
       <div class="mt-1 flex justify-between space-x-2">
-        <div class="flex space-x-2">
+        <div class="flex space-x-2 overflow-auto">
           <span v-if="post.city" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
             {{ post.city }}
           </span>

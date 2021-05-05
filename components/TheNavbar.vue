@@ -28,8 +28,8 @@
 
     </div>
 
-    <div v-show="$store.state.user" class="w-full flex items-center justify-center sm:ml-6 sm:hidden space-x-4 sm:space-x-8">
-      <nuxt-link to="/dashboard" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+    <div class="w-full flex items-center justify-center sm:ml-6 sm:hidden space-x-4 sm:space-x-8">
+      <nuxt-link v-show="$store.state.user" to="/dashboard" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
         Dashboard
       </nuxt-link>
       <nuxt-link to="/feed" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
