@@ -4,7 +4,7 @@ const strings = {
     dashboard: 'Dashboard',
     feed: 'Feed',
     signIn: 'Sign In',
-    signOut: 'signOut'
+    signOut: 'Sign Out'
   },
   footer: {
     feedback: 'Feedback',

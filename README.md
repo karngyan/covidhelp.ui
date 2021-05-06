@@ -35,6 +35,10 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Add a language Guide
+
+[Open Instructions](./ADD_LANGUAGE_GUIDE.md)
+
 ## Note
 
 The backend is in a private repository. This directly consumes the api. What we expect from developers is to either add information thats publicly available or consume some public API to add on to the info on the website. If you're interested in adding an API. Drop us a message on Slack.
