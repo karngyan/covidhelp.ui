@@ -25,7 +25,7 @@ const strings = {
     beneficiaries: 'Beneficiaries',
     volunteers: 'Volunteers',
     one: 'Automated Donor-Patient Matching',
-    two: 'Volunteers can post updates. Edit and Delete when required.',
+    two: 'A dashboard for volunteers where they can create/edit/modify posts.',
     three: 'Live twitter feed, verified and approved by our volunteers.',
   },
   signIn: 'Sign In',
