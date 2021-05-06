@@ -4,31 +4,31 @@
 
     <div class="relative pb-6 pt-28">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-        Feedback Form
+        {{ $t('feedback.feedbackForm') }}
       </h2>
       <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
-        Always looking for improvements and suggestions.
+        {{ $t('feedback.tag') }}
       </p>
     </div>
 
-    <b-field label="Name">
+    <b-field :label="$t('name')">
       <b-input class="rounded-md border-gray-200" placeholder="Enter your full name" v-model="name"></b-input>
     </b-field>
 
-    <b-field label="Email">
+    <b-field :label="$t('email')">
       <b-input placeholder="Enter your email address" v-model="email" type="email"></b-input>
     </b-field>
 
-    <b-field label="Message">
+    <b-field :label="$t('message')">
         <b-input maxlength="500" type="textarea" v-model="message"></b-input>
     </b-field>
 
-    <b-button @click="submitForm" :disabled="message.length < 5 || name.length <= 0" type="is-primary" expanded :loading="loading">Submit</b-button>
+    <b-button @click="submitForm" :disabled="message.length < 5 || name.length <= 0" type="is-primary" expanded :loading="loading">{{ $t('submit') }}</b-button>
   </div>
   <div v-show="done" class="max-w-3xl mx-auto space-y-4">
     <div class="h-screen space-y-2 -py-10 flex flex-col items-center justify-center relative">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-        Thank You for the Feedback!
+        {{ $t('feedback.thankYou') }}
       </h2>
     </div>
   </div>

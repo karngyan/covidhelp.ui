@@ -11,66 +11,66 @@
 
         <div class="relative flex flex-col space-y-3 items-center justify-center pb-6 pt-28">
           <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Donor Form
+            {{ $t('donor.header') }}
           </h2>
           <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
-            Form is for both Blood and Plasma donors. Plasma donors are requested to provide COVID history in the form.
+            {{ $t('donor.subtext') }}
           </p>
-          <b-button @click="donorModalOpen = true" type="is-primary">Open Criteria</b-button>
+          <b-button @click="donorModalOpen = true" type="is-primary">{{ $t('openCriteria') }}</b-button>
         </div>
         <b-field
-          label="Donor Preference">
+          :label="$t('preference')">
           <b-select placeholder="Select one" expanded v-model="preference">
-            <option value="0">Plasma</option>
-            <option value="1">Blood</option>
-            <option value="2">Both</option>
+            <option value="0">{{ $t('plasma') }}</option>
+            <option value="1">{{ $t('blood') }}</option>
+            <option value="2">{{ $t('both') }}</option>
           </b-select>
         </b-field>
 
-        <b-field label="Name">
+        <b-field :label="$t('name')">
           <b-input class="rounded-md border-gray-200" placeholder="Enter your full name" v-model="name"></b-input>
         </b-field>
 
-        <b-field label="Email">
+        <b-field :label="$t('email')">
           <b-input placeholder="Enter your email address" v-model="email" type="email"></b-input>
         </b-field>
 
-        <b-field label="Phone Number">
+        <b-field :label="$t('phoneNumber')">
           <b-input placeholder="Enter your active phone number" v-model="phone" type="tel"></b-input>
         </b-field>
 
-        <b-field label="Whatsapp Number">
+        <b-field :label="$t('whatsappNumber')">
           <b-input placeholder="Enter your active phone number" v-model="whatsappNumber" type="text"></b-input>
         </b-field>
 
         <b-field>
           <b-checkbox v-model="whatsappCheck">
-            Same as phone number
+            {{ $t('sameAsPhoneNumber') }}
           </b-checkbox>
         </b-field>
 
         <b-field
-          label="Gender">
+          :label="$t('gender')">
           <b-select placeholder="Select one" expanded v-model="gender">
-            <option value="F">Female</option>
-            <option value="M">Male</option>
-            <option value="O">Others</option>
+            <option value="F">{{ $t('female') }}</option>
+            <option value="M">{{ $t('male') }}</option>
+            <option value="O">{{ $t('other') }}</option>
           </b-select>
         </b-field>
 
-        <b-field label="State">
+        <b-field :label="$t('state')">
           <b-select placeholder="Select one" expanded v-model="state">
             <option v-for="state in states" :value="state" :key="state">{{ state }}</option>
           </b-select>
         </b-field>
 
-        <b-field label="City">
+        <b-field :label="$t('city')">
           <b-select placeholder="Select one" expanded v-model="city">
             <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
           </b-select>
         </b-field>
 
-        <b-field label="Blood Group">
+        <b-field :label="$t('bloodGroup')">
           <b-select placeholder="Select one" expanded v-model="bloodGroup">
             <option value="A+">A+</option>
             <option value="A-">A-</option>
@@ -83,25 +83,25 @@
           </b-select>
         </b-field>
 
-        <b-field label="Height (in cms)">
+        <b-field :label="$t('heightInCms')">
           <b-numberinput v-model="heightInCm"></b-numberinput>
         </b-field>
 
-        <b-field label="Weight (in kgs)">
+        <b-field :label="$t('weightInKgs')">
           <b-numberinput v-model="weightInKgs"></b-numberinput>
         </b-field>
 
-        <b-field label="Age (in years)">
+        <b-field :label="$t('ageInYears')">
           <b-numberinput v-model="age"></b-numberinput>
         </b-field>
 
-        <b-field label="When were you tested positive? (optional for blood donors)">
+        <b-field :label="$t('donor.whenPositive')">
             <b-datepicker v-model="covidInfectedStart"
                 :first-day-of-week="1"
                 placeholder="Click to select a date">
 
                 <b-button
-                    label="Today"
+                    :label="$t('today')"
                     type="is-primary"
                     icon-left="calendar-today"
                     @click="covidInfectedStart = new Date()" />
@@ -110,17 +110,17 @@
 
         <b-field>
           <b-checkbox v-model="vaccinated">
-            Have you been vaccinated?
+            {{ $t('donor.beenVaccinatedQuestion') }}
           </b-checkbox>
         </b-field>
 
-        <b-field v-show="vaccinated" label="Please share the vaccination date..">
+        <b-field v-show="vaccinated" :label="$t('donor.shareVaccinationDate')">
             <b-datepicker v-model="vaccinationDate"
                 :first-day-of-week="1"
                 placeholder="Click to select vaccination date">
 
                 <b-button
-                    label="Today"
+                    :label="$t('today')"
                     type="is-primary"
                     icon-left="calendar-today"
                     @click="vaccinationDate = new Date()" />
@@ -129,18 +129,20 @@
 
 
 
-        <b-field label="Since when have you been symptom free? (Please enter number of days)">
+        <b-field :label="$t('donor.symptomFreeDays')">
           <b-numberinput v-model="symptomFreeDays"></b-numberinput>
         </b-field>
 
         <div class="submit py-4">
           <b-field>
             <b-checkbox v-model="consentToShare">
-              I give consent to share my information for donor matching only.
+              {{ $t('donor.consent') }}
             </b-checkbox>
           </b-field>
 
-          <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Submit</b-button>
+          <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">
+            {{ $t('submit') }}
+          </b-button>
         </div>
       </div>
       <div v-show="done" class="max-w-3xl mx-auto space-y-4">
@@ -192,7 +194,7 @@ export default {
       loading: false,
       preference: '0',
       done: false,
-      donorModalOpen: true
+      donorModalOpen: false
     }
   },
   watch: {

@@ -25,11 +25,22 @@ const strings = {
     beneficiaries: 'Beneficiaries',
     volunteers: 'Volunteers'
   },
+  signIn: 'Sign In',
+  or: 'or',
+  email: 'Email',
+  password: 'Password',
+  name: 'Name',
+  message: 'Message',
+  submit: 'Submit',
   login: {
-
+    signInToYourAccount: 'Sign in to your account',
+    signUpAsAVolunteer: 'Sign up as a Volunteer',
   },
   team: {
-
+    header: 'Meet our team',
+    subtext: 'It\'s a small growing team. Volunteers are always welcome. We need developers as well. The entire website is in Go/Vue and deployed on AWS. Ping us anytime.',
+    vheader: 'Meet our volunteers',
+    vsubtext: 'Thanks for helping out.'
   },
   beneficiary: {
 
@@ -37,11 +48,38 @@ const strings = {
   volunteer: {
 
   },
+  openCriteria: 'Open Criteria',
+  preference: 'Preference',
+  blood: 'Blood',
+  plasma: 'Plasma',
+  both: 'Both',
+  phoneNumber: 'Phone Number',
+  whatsappNumber: 'Whatsapp Number',
+  sameAsPhoneNumber: 'Same as phone number',
+  gender: 'Gender',
+  female: 'Female',
+  male: 'Male',
+  other: 'Other',
+  state: 'State',
+  city: 'City',
+  bloodGroup: 'Blood Group',
+  heightInCms: 'Height (in cms)',
+  weightInKgs: 'Weight (in kgs)',
+  ageInYears: 'Age (in years)',
+  today: 'Today',
   donor: {
-
+    header: 'Donor Form',
+    subtext: 'Form is for both Blood and Plasma donors. Plasma donors are requested to provide COVID history in the form.',
+    whenPositive: 'When were you tested positive? (optional for blood donors)',
+    beenVaccinatedQuestion: 'Have you been vaccinated?',
+    shareVaccinationDate: 'Please share the vaccination date',
+    symptomFreeDays: 'Since when have you been symptom free? (Please enter number of days)',
+    consent: 'I give consent to share my information for donor matching only.'
   },
   feedback: {
-
+    feedbackForm: 'Feedback Form',
+    tag: 'Always looking for improvements and suggestions.',
+    thankYou: 'Thank You for the Feedback!'
   },
   feed: {
 

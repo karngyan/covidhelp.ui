@@ -3,8 +3,8 @@
   <div class="mx-auto py-12 pt-32 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
       <div class="space-y-5 sm:space-y-4">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our team</h2>
-        <p class="text-xl text-gray-500">It's a small growing team. Volunteers are always welcome. We need developers as well. The entire website is in Go/Vue and deployed on AWS. Ping us anytime.</p>
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">{{ $t('team.header') }}</h2>
+        <p class="text-xl text-gray-500">{{ $t('team.subtext') }}</p>
       </div>
       <div class="lg:col-span-2">
         <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
@@ -71,8 +71,8 @@
 
     <div v-show="volunteers.length > 0" class="mt-6 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
       <div class="space-y-5 sm:space-y-4">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our volunteers</h2>
-        <p class="text-xl text-gray-500">Thanks for helping out. ❤️</p>
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">{{ $t('team.vheader') }}</h2>
+        <p class="text-xl text-gray-500">{{ $t('team.vsubtext') }} ❤️</p>
       </div>
       <div class="lg:col-span-2">
         <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
@@ -103,10 +103,7 @@
 export default {
   data() {
     return {
-      volunteers: [{
-        name: 'Gyan Karn',
-        city: 'New Delhi'
-      }]
+      volunteers: []
     }
   },
   methods: {
