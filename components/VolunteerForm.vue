@@ -4,67 +4,67 @@
 
     <div class="relative pb-6 pt-28">
       <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-        Volunteer Form
+        {{ $t('volunteer.header') }}
       </h2>
       <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
-        Help us in quickly matching donors to people in need. This is grunt work. Calling out people with empathy.
+        {{ $t('volunteer.subtext') }}
       </p>
     </div>
 
-    <b-field label="Name">
+    <b-field :label="$t('name')">
       <b-input class="rounded-md border-gray-200" placeholder="Enter your full name" v-model="name"></b-input>
     </b-field>
 
-    <b-field label="Email">
+    <b-field :label="$t('email')">
       <b-input placeholder="Enter your email address" v-model="email" type="email"></b-input>
     </b-field>
 
-    <b-field label="Phone Number">
+    <b-field :label="$t('phoneNumber')">
       <b-input placeholder="Enter your active phone number" v-model="phone" type="text"></b-input>
     </b-field>
 
-    <b-field label="Whatsapp Number">
+    <b-field :label="$t('whatsappNumber')">
       <b-input placeholder="Enter your active phone number" v-model="whatsappNumber" type="text"></b-input>
     </b-field>
 
     <b-field>
       <b-checkbox v-model="whatsappCheck">
-        Same as phone number
+        {{ $t('sameAsPhoneNumber') }}
       </b-checkbox>
     </b-field>
 
-    <b-field label="State">
+    <b-field :label="$t('state')">
       <b-select placeholder="Select one" expanded v-model="state">
         <option v-for="state in states" :value="state" :key="state">{{ state }}</option>
       </b-select>
     </b-field>
 
-    <b-field label="City">
+    <b-field :label="$t('city')">
       <b-select placeholder="Select one" expanded v-model="city">
         <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
       </b-select>
     </b-field>
 
-    <b-field label="How many hours per week can you contribute?">
+    <b-field :label="$t('volunteer.howManyHours')">
       <b-numberinput v-model="hoursPerWeek"></b-numberinput>
     </b-field>
 
-    <b-field label="How can you contribute? (optional)" message="Include any specifics like Plasma, Blood, ICU Bed, NGOs.">
+    <b-field :label="$t('volunteer.howCanYouContribute')" :message="$t('volunteer.howCanYouContributeMessage')">
         <b-input maxlength="500" type="textarea" v-model="details"></b-input>
     </b-field>
 
-    <b-field label="Enter new password (min length: 6)">
+    <b-field :label="$t('volunteer.enterNewPassword')">
       <b-input type="password" password-reveal v-model="password"></b-input>
     </b-field>
 
     <div class="submit py-4">
       <b-field>
         <b-checkbox v-model="consentToShare">
-          I give consent to share my information with COVID Help for volunteer work.
+          {{ $t('volunteer.consent') }}
         </b-checkbox>
       </b-field>
 
-      <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">Sign Up</b-button>
+      <b-button @click="submitForm" :disabled="!consentToShare" type="is-primary" expanded :loading="loading">{{ $t('signUp') }}</b-button>
     </div>
   </div>
   <div v-show="done" class="max-w-3xl mx-auto space-y-4">

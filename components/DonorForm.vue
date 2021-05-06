@@ -148,10 +148,10 @@
       <div v-show="done" class="max-w-3xl mx-auto space-y-4">
         <div class="h-screen -py-10 space-y-2 flex flex-col items-center justify-center relative">
           <h2 class="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Donor Registered Successfully!
+            {{ $t('donor.success') }}
           </h2>
           <p class="max-w-3xl mx-auto text-center text-xl text-gray-500">
-            Thank you so much for contributing. Please turn your email notifications on. :)
+            {{ $t('donor.thankYou') }}
           </p>
         </div>
       </div>

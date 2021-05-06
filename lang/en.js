@@ -46,7 +46,15 @@ const strings = {
 
   },
   volunteer: {
-
+    header: 'Volunteer Form',
+    subtext: 'Help us in quickly matching donors to people in need. This is grunt work. Calling out people with empathy.',
+    howManyHours: 'How many hours per week can you contribute?',
+    howCanYouContribute: 'How can you contribute? (optional)',
+    howCanYouContributeMessage: 'Include any specifics like Plasma, Blood, ICU Bed, NGOs.',
+    enterNewPassword: 'Enter new password (min length: 6)',
+    consent: 'I give consent to share my information with COVID Help for volunteer work.',
+    success: 'Volunteer Registered Successfully!',
+    thankYou: 'Thank you for your interest. We\'ll reach out shortly. :)'
   },
   openCriteria: 'Open Criteria',
   preference: 'Preference',
@@ -74,7 +82,9 @@ const strings = {
     beenVaccinatedQuestion: 'Have you been vaccinated?',
     shareVaccinationDate: 'Please share the vaccination date',
     symptomFreeDays: 'Since when have you been symptom free? (Please enter number of days)',
-    consent: 'I give consent to share my information for donor matching only.'
+    consent: 'I give consent to share my information for donor matching only.',
+    success: 'Donor Registered Successfully!',
+    thankYou: 'Thank you so much for contributing. Please turn your email notifications on. :)',
   },
   feedback: {
     feedbackForm: 'Feedback Form',
