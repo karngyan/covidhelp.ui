@@ -43,7 +43,15 @@ const strings = {
     vsubtext: 'Thanks for helping out.'
   },
   beneficiary: {
-
+    header: 'Beneficiary Form',
+    subtext: 'We\'ll try our best to match you with a donor. Keep checking your mail.',
+    requestType: 'Request Type',
+    consent: 'I give consent to share my information for donor matching only.',
+    success: 'Donor Request Submitted Successfully!',
+    thankYou: 'We\'re trying our best to find a donor for you. Please turn your email notifications on and stay strong :)',
+    accessToOxygenCylinder: 'Do you have access to an oxygen cylinder?',
+    reportLink: 'Report Link (add a public Google drive link)',
+    spo2Value: 'SPO2 Value? (<= 100)'
   },
   volunteer: {
     header: 'Volunteer Form',
