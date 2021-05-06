@@ -67,7 +67,7 @@ export default {
   i18n: {
     lazy: true,
     langDir: 'lang/',
-    locales: [{code: 'en', name: 'English', file: 'en.js'}, {code: 'hi', name: 'हिंदी', file: 'hi.js'}],
+    locales: [{code: 'en', name: 'English', file: 'en_US.js'}, {code: 'hi', name: 'हिंदी', file: 'hi_IN.js'}],
     defaultLocale: 'en',
     vueI18n: {
       fallbackLocale: 'en',
