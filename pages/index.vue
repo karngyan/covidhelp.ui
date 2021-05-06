@@ -28,27 +28,25 @@
         <main class="mx-auto max-w-7xl px-4">
           <div class="text-center">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-              <span class="block xl:inline">Help people</span>
-              <span class="block text-purple-600 xl:inline">in need</span>
+              <span class="block xl:inline">{{ $t('home.heroOne') }}</span>
+              <span class="block text-purple-600 xl:inline">{{ $t('home.heroTwo') }}</span>
             </h1>
             <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              A youth Initiative for COVID help in India 🇮🇳
+               {{ $t('home.taglineOne') }} 🇮🇳
             </p>
-            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              We are a group of volunteers helping people get over this COVID-19 crisis. We match donors and beneficiaries via email and sms.
-            </p>
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">{{ $t('home.taglineTwo') }}</p>
           </div>
 
           <div class="flex py-5 items-center justify-center">
             <span class="relative z-0 inline-flex shadow-sm rounded-md">
-              <nuxt-link to="/donor" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
-                Become a Donor
+              <nuxt-link :to="localePath('/donor')" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                {{ $t('home.becomeDonor') }}
               </nuxt-link>
-              <nuxt-link to="/beneficiary" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
-                Request Blood/Plasma
+              <nuxt-link :to="localePath('/beneficiary')" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                {{ $t('home.becomeBeneficiary') }}
               </nuxt-link>
-              <nuxt-link to="/volunteer" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
-                Become a Volunteer
+              <nuxt-link :to="localePath('/volunteer')" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-purple-300 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-purple-500 focus:border-purple-500">
+                {{ $t('home.becomeVolunteer') }}
               </nuxt-link>
             </span>
           </div>
@@ -57,12 +55,12 @@
     </section>
     <div class="space-y-2 z-10 lg:col-start-3 lg:col-span-1">
       <div class="bg-purple-800 shadow-md rounded-lg px-4 py-2 border-b border-gray-200 sm:px-6">
-        <nuxt-link to="/feed" class="animate-pulse relative text-md leading-6 font-bold hover:text-white text-white">
-          Post Feed
+        <nuxt-link :to="localePath('/feed')" class="animate-pulse relative text-md leading-6 font-bold hover:text-white text-white">
+          {{ $t('home.postFeed') }}
         </nuxt-link>
       </div>
       <ul>
-        <nuxt-link to="/feed" class="space-y-1">
+        <nuxt-link :to="localePath('/feed')" class="space-y-1">
           <PostSmallCard v-for="post in posts" :key="post.id" :post="post"/>
         </nuxt-link>
       </ul>
@@ -76,16 +74,16 @@
   <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-        Statistics
+        {{ $t('home.statistics') }}
       </h2>
       <p class="mt-3 text-xl text-purple-200 sm:mt-4">
-        Help save lives in this situation.
+        {{ $t('home.statisticsTagline') }}
       </p>
     </div>
     <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
       <div class="flex flex-col">
         <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
-          Donors
+          {{ $t('home.donors') }}
         </dt>
         <dd class="order-1 text-5xl font-extrabold text-white">
           {{ donorCount }}
@@ -93,7 +91,7 @@
       </div>
       <div class="flex flex-col mt-10 sm:mt-0">
         <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
-          Beneficiaries
+          {{ $t('home.beneficiaries') }}
         </dt>
         <dd class="order-1 text-5xl font-extrabold text-white">
           {{ beneficiaryCount }}
@@ -101,7 +99,7 @@
       </div>
       <div class="flex flex-col mt-10 sm:mt-0">
         <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
-          Volunteers
+          {{ $t('home.volunteers') }}
         </dt>
         <dd class="order-1 text-5xl font-extrabold text-white">
           {{ volunteerCount }}

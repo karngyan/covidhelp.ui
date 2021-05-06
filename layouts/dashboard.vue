@@ -42,20 +42,20 @@
 
             <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
               <div class="flex-shrink-0 flex items-center px-4">
-                <nuxt-link to="/">
+                <nuxt-link :to="localePath('/')">
                   <Logo class="h-10 w-auto text-purple-700"/>
                 </nuxt-link>
                 <h3 class="font-bold text-lg">Dashboard</h3>
               </div>
               <nav @click="menuOpen = false" class="mt-5 px-2 space-y-1">
-                <nuxt-link exact to="/dashboard" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link exact :to="localePath('/dashboard')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                   </svg>
                   Home
                 </nuxt-link>
 
-                <nuxt-link to="/dashboard/create-post" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/dashboard/create-post')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
@@ -63,7 +63,7 @@
                   Create a post
                 </nuxt-link>
 
-                <nuxt-link to="/dashboard/posts" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/dashboard/posts')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                     <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
@@ -71,14 +71,14 @@
                   My posts
                 </nuxt-link>
 
-                <nuxt-link to="/dashboard/approve-beneficiaries" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/dashboard/approve-beneficiaries')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                   Approve Beneficiaries
                 </nuxt-link>
 
-                <nuxt-link to="/feed" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/feed')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"  viewBox="0 0 20 20" fill="currentColor">
                     <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z" />
                     <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z" />
@@ -120,27 +120,27 @@
           <div class="flex flex-col h-0 flex-1 border-r border-gray-200 bg-white">
             <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
               <div class="flex items-center flex-shrink-0 space-x-2 px-4">
-                <nuxt-link to="/">
+                <nuxt-link :to="localePath('/')">
                   <Logo class="h-10 w-auto text-purple-700"/>
                 </nuxt-link>
                 <h3 class="font-bold text-lg">Dashboard</h3>
               </div>
               <nav class="mt-5 flex-1 px-2 bg-white space-y-1">
-                <nuxt-link exact to="/dashboard" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link exact :to="localePath('/dashboard')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                   </svg>
                   Home
                 </nuxt-link>
 
-                <nuxt-link to="/dashboard/create-post" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/dashboard/create-post')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                   </svg>
                   Create a post
                 </nuxt-link>
-                <nuxt-link to="/dashboard/posts" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/dashboard/posts')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                     <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
@@ -148,14 +148,14 @@
                   My posts
                 </nuxt-link>
 
-                <nuxt-link to="/dashboard/approve-beneficiaries" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/dashboard/approve-beneficiaries')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                   Approve Beneficiaries
                 </nuxt-link>
 
-                <nuxt-link to="/feed" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                <nuxt-link :to="localePath('/feed')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                   <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"  viewBox="0 0 20 20" fill="currentColor">
                     <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z" />
                     <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z" />

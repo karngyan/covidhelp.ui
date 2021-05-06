@@ -96,7 +96,7 @@ export default {
       })
     },
     updatePost() {
-      this.$router.push('/dashboard/posts/' + this.post.id)
+      this.$router.push(this.localePath('/dashboard/posts/' + this.post.id))
     }
   },
   created() {

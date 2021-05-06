@@ -1,7 +1,7 @@
 <template>
 <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-md">
-    <nuxt-link to="/">
+    <nuxt-link :to="localePath('/')">
       <Logo class="mx-auto h-16 w-auto text-purple-700" />
     </nuxt-link>
     <h2 class="mt-3 text-center text-3xl font-extrabold text-gray-900">
@@ -9,7 +9,7 @@
     </h2>
     <p class="mt-2 text-center text-sm text-gray-600">
       Or
-      <nuxt-link to="/volunteer" class="font-medium text-indigo-600 hover:text-indigo-500">
+      <nuxt-link :to="localePath('/volunteer')" class="font-medium text-indigo-600 hover:text-indigo-500">
         Sign up as a volunteer
       </nuxt-link>
     </p>
@@ -56,7 +56,7 @@ export default {
           console.debug('user fetched', data)
           store.dispatch('success', 'Signed in successfully!')
           this.loading = false
-          this.$router.push('/dashboard')
+          this.$router.push(this.localePath('/dashboard'))
         }).catch((error) => {
           console.error(error)
           store.dispatch('danger', error.toString())

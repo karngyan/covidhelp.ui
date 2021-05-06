@@ -1,4 +1,9 @@
-export default function({app, route, redirect}) {
+export default function({app, store, route, redirect, i18n }) {
+  if (store.state.locale) {
+    console.debug('switching locale to: ', store.state.locale)
+    i18n.setLocale(store.state.locale)
+  }
+
   if (app.$fire.auth) {
     const user = app.$fire.auth.currentUser
     if (user) {

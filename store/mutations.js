@@ -37,6 +37,9 @@ export default {
        Object.assign(post, newPost)
     }
   },
+  switchLocale(state, code) {
+    state.locale = code
+  },
   setItem(state, {item, id, resource}) {
 
     if (!state[resource]) {

@@ -150,7 +150,7 @@ export default {
                   this.$store.dispatch('success', 'Volunteer registered successfully!')
                   this.loading = false
                   this.done = true
-                  this.$router.push('/dashboard')
+                  this.$router.push(this.localePath('/dashboard'))
                   store.dispatch('setSignUpState', false)
                 }).catch(error => {
                 this.$store.dispatch('danger',error.response.data)

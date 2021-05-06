@@ -20,7 +20,7 @@ export default {
           }).catch((error) => {
             dispatch('danger', error.toString())
             dispatch('signOut')
-            this.$router.push('/login')
+            this.$router.push(this.localePath('/login'))
         })
       })
     }
@@ -51,8 +51,17 @@ export default {
     return this.$fire.auth.signOut()
       .then(() => {
         commit('setUser', null)
-        this.$router.push("/")
+        this.$router.push(this.localePath('/'))
       })
+  },
+
+  switchLocale({commit}, {code}) {
+    return new Promise((resolve) => {
+      commit('switchLocale', code)
+      this.$i18n.setLocale(code)
+      localStorage.setItem('covidhelp.locale', code)
+      resolve(code)
+    })
   },
 
   signInUserWithEmailAndPassword({dispatch}, {email, password}) {

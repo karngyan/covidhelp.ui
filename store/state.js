@@ -7,5 +7,6 @@ export default function() {
     signUpState: false,
     volunteers: [],
     postsByUser: [],
+    locale: localStorage.getItem('covidhelp.locale') || 'en'
   }
 }

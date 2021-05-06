@@ -61,8 +61,23 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/firebase',
-    ['nuxt-buefy', { css: true }]
+    ['nuxt-buefy', { css: true }],
+    'nuxt-i18n'
   ],
+  i18n: {
+    lazy: true,
+    langDir: 'lang/',
+    locales: [{code: 'en', name: 'English', file: 'en.js'}, {code: 'hi', name: 'हिंदी', file: 'hi.js'}],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,  // recommended
+    }
+  },
   firebase: {
     config: {
       apiKey: process.env.API_KEY,

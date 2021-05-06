@@ -4,10 +4,10 @@
     <div class="pr-16 sm:text-center sm:px-16">
       <p class="font-medium text-white">
         <span class="md:hidden">
-          Right now in Bihar, Jharkhand, Delhi & UP!
+          {{ $t('banner.mobile')}}
         </span>
         <span class="hidden md:inline">
-          [Update] We are live in Bihar, Jharkhand, Delhi & UP!
+          {{ $t('banner.web')}}
         </span>
       </p>
     </div>
