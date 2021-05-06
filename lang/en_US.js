@@ -23,7 +23,10 @@ const strings = {
     statisticsTagline: 'Help save lives in this situation.',
     donors: 'Donors',
     beneficiaries: 'Beneficiaries',
-    volunteers: 'Volunteers'
+    volunteers: 'Volunteers',
+    one: 'Automated Donor-Patient Matching',
+    two: 'Volunteers can post updates. Edit and Delete when required.',
+    three: 'Live twitter feed, verified and approved by our volunteers.',
   },
   signIn: 'Sign In',
   or: 'or',

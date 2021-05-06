@@ -70,12 +70,40 @@
 
 </div>
 
-  <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="py-12 bg-white">
+<div class="pb-24 bg-white">
   <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <img src="../assets/covidhelpheader.svg" alt="COVID Help India Banner">
+    <h2 class="sr-only">Covid HELP India Features That we are working on.</h2>
+    <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
+      <div>
+        <dt>
+          <div class="flex items-center justify-center rounded-md text-white">
+            <img src="../assets/one.png" alt="automated donor matching"/>
+          </div>
+          <p class="mt-5 text-xl leading-6 font-extrabold text-center text-purple-900">{{ $t('home.one') }}</p>
+        </dt>
+      </div>
+
+      <div>
+        <dt>
+          <div class="flex items-center justify-center rounded-md text-white">
+            <img src="../assets/two.png" alt="automated donor matching"/>
+          </div>
+          <p class="mt-5 text-xl leading-6 font-extrabold text-center text-purple-900">{{ $t('home.two') }}</p>
+        </dt>
+      </div>
+
+      <div>
+        <dt>
+          <div class="flex items-center justify-center rounded-md text-white">
+            <img src="../assets/three.png" alt="automated donor matching"/>
+          </div>
+          <p class="mt-5 text-xl leading-6 font-extrabold text-center text-purple-900">{{ $t('home.three') }}</p>
+        </dt>
+      </div>
+    </dl>
   </div>
 </div>
+
 
 <div class="bg-purple-800">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
