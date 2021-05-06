@@ -95,8 +95,8 @@ const strings = {
 
   },
   banner: {
-    web: '[Update] We are live in Bihar, Jharkhand, Delhi & UP!',
-    mobile: 'Right now in Bihar, Jharkhand, Delhi & UP!'
+    web: '📢 We are live PAN India! 🇮🇳',
+    mobile: '📢 Available across India! 🇮🇳'
   }
 }
 
