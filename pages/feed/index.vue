@@ -2,25 +2,25 @@
 <div class="bg-gray-50">
   <div class="mx-auto py-28 grid grid-cols-1 gap-6 px-4 sm:px-6 lg:px-8 max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
     <section aria-labelledby="right section" class="lg:col-start-1 lg:col-span-1">
-      <b-field label="State">
+      <b-field :label="$t('state')">
         <b-select placeholder="Select one" expanded v-model="state">
           <option v-for="state in states" :value="state" :key="state">{{ state }}</option>
         </b-select>
       </b-field>
-      <div @click="state = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">clear state</div>
+      <div @click="state = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">{{ $t('clearState') }}</div>
 
-      <b-field label="City">
+      <b-field :label="$t('city')">
         <b-select placeholder="Select one" expanded v-model="city">
           <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
         </b-select>
       </b-field>
 
-      <div @click="city = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">clear city</div>
+      <div @click="city = ''" class="cursor-pointer font-sm pb-4 text-purple-600 hover:text-purple-800">{{ $t('clearCity') }}</div>
 
-      <b-field label="Filter" class="overflow-auto">
+      <b-field :label="$t('filter')" class="overflow-auto">
         <div class="flex flex-col">
           <span v-for="tag in tags" :key="tag.identifier">
-            <b-switch v-model="tag.status" >{{ tag.text }}</b-switch>
+            <b-switch v-model="tag.status" >{{ $t('tags.' + tag.identifier) }}</b-switch>
           </span>
         </div>
       </b-field>

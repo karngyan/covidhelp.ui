@@ -83,6 +83,9 @@ const strings = {
   weightInKgs: 'Weight (in kgs)',
   ageInYears: 'Age (in years)',
   today: 'Today',
+  filter: 'Filter',
+  clearState: 'clear state',
+  clearCity: 'clear city',
   donor: {
     header: 'Donor Form',
     subtext: 'Form is for both Blood and Plasma donors. Plasma donors are requested to provide COVID history in the form.',
@@ -105,7 +108,26 @@ const strings = {
   banner: {
     web: '📢 We are live PAN India! 🇮🇳',
     mobile: '📢 Available across India! 🇮🇳'
-  }
+  },
+  tags: {
+    hospitalBedGeneral: 'Hospital Bed General',
+    hospitalBedICU: 'Hospital Bed ICU',
+    hospitalBedOxygen: 'Hospital Bed Oxygen',
+    oxygenCylinder: 'Oxygen Cylinder',
+    oxygenRefilling: 'Oxygen Refilling',
+    oxygenSprayCan: 'Oxygen Spray Can',
+    rtpcrTest: 'RTPCR Test',
+    ambulance: 'Ambulance',
+    plasma: 'Plasma',
+    blood: 'Blood',
+    food: 'Food for Patients, Family',
+    someoneToTalkTo: 'Someone to talk to',
+    homeCare: 'Home Care, Nurse',
+    elderCare: 'Elder Care',
+    oxygenConcentrator: 'Oxygen Concentrator',
+    remdesivir: 'Remdesivir',
+    other: 'Other'
+  },
 }
 
 

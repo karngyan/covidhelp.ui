@@ -44,7 +44,7 @@
             {{ post.state }}
           </span>
           <span v-for="tag in tags" :key="tag" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
-            {{ tag }}
+            {{ $t('tags.' + tag.identifier) }}
           </span>
         </div>
       </div>
@@ -76,8 +76,9 @@ export default {
       this.post.tag.split('_').forEach((tag) => {
         if (tag.length > 0) {
           const xtag = allTags.filter((xtag) => xtag.identifier === tag.trim())
-          if (xtag.length > 0)
-            customTags.push(xtag[0].text.trim())
+          if (xtag.length > 0) {
+            customTags.push(xtag[0])
+          }
         }
       })
       return customTags
