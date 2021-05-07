@@ -1,7 +1,7 @@
 // Marathi language. (India)
 const strings = {
   nav: {
-    name: "कोव्हिड भारताला मदत करा",
+    name: "कोविड दरम्यान भारत मदत करा",
     dashboard: "डॅशबोर्ड",
     feed: "भरवणे",
     signIn: "साइन इन",

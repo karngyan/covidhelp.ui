@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="mx-auto z-10 py-28 grid grid-cols-1 gap-6 px-4 sm:px-6 lg:px-8 max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+  <div class="mx-auto z-10 py-16 grid grid-cols-1 gap-6 px-4 sm:px-6 lg:px-8 max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
     <section aria-labelledby="right section" class="lg:col-start-1 lg:col-span-2">
       <div class="relative pb-16">
         <main class="mx-auto max-w-7xl px-4">
