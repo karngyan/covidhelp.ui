@@ -124,7 +124,7 @@
           {{ postCount }}
         </dd>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col mt-10 sm:mt-0">
         <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
           {{ $t('home.donors') }}
         </dt>
