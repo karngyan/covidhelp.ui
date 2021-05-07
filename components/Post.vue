@@ -43,7 +43,7 @@
           <span v-if="post.state" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
             {{ post.state }}
           </span>
-          <span v-for="tag in tags" :key="tag" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+          <span v-for="tag in tags" :key="tag.identifier" class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
             {{ $t('tags.' + tag.identifier) }}
           </span>
         </div>

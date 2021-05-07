@@ -60,7 +60,7 @@
       <nuxt-link :to="localePath('/feed')" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
         {{ $t('nav.feed') }}
       </nuxt-link>
-      <a v-for="locale in availableLocales" :key="locale.code" @click.prevent.stop="setLocale(locale.code)" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+      <a v-for="locale in allLocales" :key="locale.code" @click.prevent.stop="setLocale(locale.code)" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
         {{ locale.name }}
       </a>
     </div>
@@ -90,6 +90,9 @@ export default {
     availableLocales () {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale && !this.defaultLocales.includes(i))
     },
+    allLocales() {
+      return this.$i18n.locales
+    }
   },
   data() {
     return {
