@@ -67,7 +67,18 @@ export default {
   i18n: {
     lazy: true,
     langDir: 'lang/',
-    locales: [{code: 'en', name: 'English', file: 'en_US.js'}, {code: 'hi', name: 'हिंदी', file: 'hi_IN.js'}],
+    locales: [
+      {code: 'en', name: 'English', file: 'en_US.js'},
+      {code: 'hi', name: 'हिंदी', file: 'hi_IN.js'},
+      {code: 'mr', name: 'मराठी', file: 'mr_IN.js'},
+      {code: 'pa', name: 'ਪੰਜਾਬੀ', file: 'pa_IN.js'},
+      // {code: 'ba', name: 'বাংলা', file: 'bn_IN.js'},
+      // {code: 'gu', name: 'ગુજરાતી', file: 'gu_IN.js'},
+      // {code: 'kn', name: 'ಕನ್ನಡ', file: 'kn_IN.js'},
+      // {code: 'ml', name: 'മലയാളം', file: 'ml_IN.js'},
+      // {code: 'ta', name: 'தமிழ்', file: 'ta_IN.js'},
+      // {code: 'te', name: 'తెలుగు', file: 'te_IN.js'}
+    ],
     defaultLocale: 'en',
     vueI18n: {
       fallbackLocale: 'en',

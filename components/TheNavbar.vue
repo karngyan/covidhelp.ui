@@ -20,15 +20,35 @@
 
       <div class="flex flex-row space-x-6">
 
-        <a v-for="locale in availableLocales" :key="locale.code" @click.prevent.stop="setLocale(locale.code)" class="justify-center hidden sm:flex items-center">
-          <b-button type="is-primary">{{ locale.name }}</b-button>
-        </a>
         <nuxt-link v-if="!$store.state.user" :to="localePath('/login')" class="justify-center flex items-center">
           <b-button type="is-primary is-light">{{ $t('nav.signIn') }}</b-button>
         </nuxt-link>
         <div v-else class="justify-center flex items-center">
           <b-button @click="signOutUser" type="is-primary is-light">{{ $t('nav.signOut') }}</b-button>
         </div>
+
+        <div class="flex flex-row space-x-0.5">
+          <!-- Simple One click toggle for English/Hindi -->
+          <a v-for="locale in defaultLocales" :key="locale.code" @click.prevent.stop="setLocale(locale.code)" class="justify-center hidden sm:flex items-center">
+            <b-button type="is-primary">{{ locale.name }}</b-button>
+          </a>
+
+          <b-dropdown aria-role="list" class="justify-center hidden sm:flex items-center">
+            <template #trigger="{ active }">
+              <b-button
+              label=""
+              type="is-primary"
+              :icon-right="active ? 'menu-up' : 'menu-down'" />
+            </template>
+            <b-dropdown-item v-for="locale in availableLocales"
+                             @click="setLocale(locale.code)"
+                             :key="locale.code" aria-role="listitem">
+              {{ locale.name }}
+            </b-dropdown-item>
+          </b-dropdown>
+        </div>
+
+
       </div>
 
     </div>
@@ -53,15 +73,29 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "TheNavbar",
   computed: {
+    hindi() {
+      return this.$i18n.locales.filter(i => i.code === this.hindiLocaleCode)
+    },
+    english() {
+      return this.$i18n.locales.filter(i => i.code === this.englishLocaleCode)
+    },
+    defaultLocales() {
+      if (this.$i18n.locale === this.englishLocaleCode) {
+        return this.hindi
+      }
+      return this.english
+    },
     availableLocales () {
-      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
-    }
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale && !this.defaultLocales.includes(i))
+    },
   },
   data() {
     return {
-      showMobileMenu: false
+      showMobileMenu: false,
+      hindiLocaleCode: 'hi',
+      englishLocaleCode: 'en'
     }
   },
   methods: {
@@ -72,6 +106,9 @@ export default {
     setLocale(code) {
       this.$store.dispatch('switchLocale', {code: code})
     }
+  },
+  created() {
+    console.debug('asdfasf', this.defaultLocales)
   }
 }
 </script>
