@@ -61,7 +61,7 @@
       </div>
       <ul>
         <nuxt-link :to="localePath('/feed')" class="space-y-1">
-          <PostSmallCard v-for="post in posts" :key="post.id" :post="post"/>
+          <PostSmallCard v-for="(post, index) in posts" :key="index" :post="post"/>
         </nuxt-link>
       </ul>
     </div>
@@ -115,7 +115,15 @@
         {{ $t('home.statisticsTagline') }}
       </p>
     </div>
-    <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
+    <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-4 sm:gap-8">
+      <div class="flex flex-col">
+        <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
+          {{ $t('home.postCount') }}
+        </dt>
+        <dd class="order-1 text-5xl font-extrabold text-white">
+          {{ postCount }}
+        </dd>
+      </div>
       <div class="flex flex-col">
         <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
           {{ $t('home.donors') }}
@@ -158,6 +166,7 @@ export default {
       volunteerCount: '...',
       donorCount: '...',
       beneficiaryCount: '...',
+      postCount: '...',
       posts: [],
     }
   },
@@ -167,6 +176,7 @@ export default {
         this.volunteerCount = data.volunteerCount
         this.donorCount = data.donorCount
         this.beneficiaryCount = data.beneficiaryCount
+        this.postCount = data.postCount
       })
     this.$store.dispatch('fetchPosts', {tag: '', page: 1, city: ''})
       .then((data) => {

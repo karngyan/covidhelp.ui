@@ -24,6 +24,7 @@ const strings = {
     donors: 'Donors',
     beneficiaries: 'Beneficiaries',
     volunteers: 'Volunteers',
+    postCount: 'Posts',
     one: 'Automated Donor-Patient Matching',
     two: 'A dashboard for volunteers where they can create/edit/modify posts.',
     three: 'Live twitter feed, verified and approved by our volunteers.',
