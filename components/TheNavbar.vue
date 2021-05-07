@@ -47,6 +47,13 @@
             <h3 class="font-bold text-lg">{{ $t('nav.name') }}</h3>
           </div>
           <nav @click="menuOpen = false" class="mt-5 px-2 space-y-1">
+            <nuxt-link v-if="$store.state.user" :to="localePath('/dashboard')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+              {{ $t('nav.dashboard') }}
+            </nuxt-link>
+
             <nuxt-link :to="localePath('/donor')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
               <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z" clip-rule="evenodd" />
@@ -130,9 +137,7 @@
           </div>
         </div>
 
-
         <div class="flex flex-row space-x-6">
-
           <nuxt-link v-if="!$store.state.user" :to="localePath('/login')" class="hidden md:flex justify-center items-center">
             <b-button type="is-primary is-light">{{ $t('nav.signIn') }}</b-button>
           </nuxt-link>
@@ -167,24 +172,8 @@
               </b-dropdown-item>
             </b-dropdown>
           </div>
-
-
         </div>
-
       </div>
-
-  <!--    <div class="w-full flex items-center justify-center md:ml-6 md:hidden space-x-4 md:space-x-8">-->
-  <!--      <nuxt-link v-show="$store.state.user" :to="localePath('/dashboard')" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">-->
-  <!--        {{ $t('nav.dashboard') }}-->
-  <!--      </nuxt-link>-->
-  <!--      <nuxt-link :to="localePath('/feed')" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">-->
-  <!--        {{ $t('nav.feed') }}-->
-  <!--      </nuxt-link>-->
-  <!--      <a v-for="locale in allLocales" :key="locale.code" @click.prevent.stop="setLocale(locale.code)" class="dark pb-3 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">-->
-  <!--        {{ locale.name }}-->
-  <!--      </a>-->
-  <!--    </div>-->
-
     </div>
   </nav>
 </div>
