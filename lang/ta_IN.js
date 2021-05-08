@@ -6,6 +6,13 @@ const strings = {
     feed: "அருத்துகை",
     signIn: "உள்நுழைக",
     signOut: "வெளியேறு",
+    donation: 'நன்கொடை',
+    donationLinks: {
+      giveIndia: 'இந்தியா அமைப்பைக் கொடுங்கள்',
+      ketto: 'கெட்டோ அமைப்பு',
+      viratAnushkaFundraiser: 'விராட் மற்றும் அனுஷ்கா நிதி திரட்டல்'
+    },
+    
   },
   footer: { feedback: "கருத்து", team: "கூட்டணி" },
   home: {

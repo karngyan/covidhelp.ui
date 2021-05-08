@@ -138,6 +138,19 @@
         </div>
 
         <div class="flex flex-row space-x-6">
+        <b-dropdown aria-role="list" class="justify-center hidden md:flex items-center">
+          <template #trigger="{ active }">
+            <b-button
+            :label="$t('nav.donation')"
+            type="is-primary"
+            :icon-right="active ? 'menu-up' : 'menu-down'" />
+          </template>
+          <b-dropdown-item has-link v-for="(value, key) in donationLinks"
+                            :key="key" aria-role="listitem">
+
+                            <a :href="value" target="_blank">{{ $t(`nav.donationLinks.${key}`)}}</a>
+          </b-dropdown-item>
+        </b-dropdown>
           <nuxt-link v-if="!$store.state.user" :to="localePath('/login')" class="hidden md:flex justify-center items-center">
             <b-button type="is-primary is-light">{{ $t('nav.signIn') }}</b-button>
           </nuxt-link>
@@ -207,7 +220,12 @@ export default {
     return {
       menuOpen: false,
       hindiLocaleCode: 'hi',
-      englishLocaleCode: 'en'
+      englishLocaleCode: 'en',
+      donationLinks: {
+        giveIndia: 'https://covid.giveindia.org/',
+        ketto: 'https://covid19.ketto.org/',
+        viratAnushkaFundraiser: 'https://www.ketto.org/fundraiser/inthistogether'
+      }
     }
   },
   methods: {
