@@ -115,8 +115,16 @@
         {{ $t('home.statisticsTagline') }}
       </p>
     </div>
-    <dl class="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-4 sm:gap-8">
+    <dl class="mt-10 text-center sm:max-w-4xl sm:mx-auto sm:grid sm:grid-cols-5 sm:gap-8">
       <div class="flex flex-col">
+        <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
+          {{ $t('home.twitterPostCount') }}
+        </dt>
+        <dd class="order-1 text-5xl font-extrabold text-white">
+          {{ twitterPostCount }}
+        </dd>
+      </div>
+      <div class="flex mt-10 sm:mt-0 flex-col">
         <dt class="order-2 mt-2 text-lg leading-6 font-medium text-purple-200">
           {{ $t('home.postCount') }}
         </dt>
@@ -167,6 +175,7 @@ export default {
       donorCount: '...',
       beneficiaryCount: '...',
       postCount: '...',
+      twitterPostCount: '...',
       posts: [],
     }
   },
@@ -177,6 +186,7 @@ export default {
         this.donorCount = data.donorCount
         this.beneficiaryCount = data.beneficiaryCount
         this.postCount = data.postCount
+        this.twitterPostCount = data.twitterPostCount
       })
     this.$store.dispatch('fetchPosts', {tag: '', page: 1, city: ''})
       .then((data) => {
