@@ -3,7 +3,8 @@ const strings = {
   nav: {
     name: "कोविड दरम्यान भारत मदत करा",
     dashboard: "डॅशबोर्ड",
-    feed: "भरवणे",
+    feed: "स्वयंसेवक फीड",
+    twitterFeed: "ट्विटर फीड",
     signIn: "साइन इन",
     signOut: "साइन आउट",
     donation: 'देणगी',

@@ -3,7 +3,8 @@ const strings = {
   nav: {
     name: "কোভিড সহায়তা ভারত",
     dashboard: "ড্যাশবোর্ড",
-    feed: "ফীড",
+    feed: "স্বেচ্ছাসেবক ফীড",
+    twitterFeed: "টুইটার ফীড",
     signIn: "সাইন ইন করো",
     signOut: "সাইন আউট করুন",
     donation: 'অনুদান',

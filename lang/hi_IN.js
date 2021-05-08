@@ -2,7 +2,8 @@ const strings = {
   nav: {
     name: 'COVID हेल्प इंडिया',
     dashboard: 'डैशबोर्ड',
-    feed: 'मदद पोस्ट फ़ीड',
+    feed: 'स्वयंसेवक फ़ीड',
+    twitterFeed: 'टिवीटर फ़ीड',
     signIn: 'साइन इन करें',
     signOut: 'प्रस्थान करें',
     donation: 'दान',

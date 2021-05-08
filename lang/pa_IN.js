@@ -3,7 +3,8 @@ const strings = {
   nav: {
     name: "ਕੋਵਿਡ ਹੈਲਪ ਇੰਡੀਆ",
     dashboard: "ਡੈਸ਼ਬੋਰਡ",
-    feed: "ਫੀਡ",
+    feed: 'ਵਲੰਟੀਅਰ ਫੀਡ',
+    twitterFeed: 'ਟਵਿੱਟਰ ਫੀਡ',
     signIn: "ਸਾਈਨ ਇਨ ਕਰੋ",
     signOut: "ਸਾਈਨ ਆਊਟ ਕਰੋ",
     donation: 'ਦਾਨ',

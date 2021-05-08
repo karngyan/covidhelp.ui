@@ -80,6 +80,15 @@
               </svg>
               {{ $t('nav.feed') }}
             </nuxt-link>
+
+            <nuxt-link :to="localePath('/twitter-feed')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+              </svg>
+              {{ $t('nav.twitterFeed') }}
+            </nuxt-link>
+
             <div class="border-b border-gray-200"></div>
 
             <nuxt-link :to="localePath('/feedback')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
@@ -133,6 +142,9 @@
             </nuxt-link>
             <nuxt-link :to="localePath('/feed')" class="dark border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
               {{ $t('nav.feed') }}
+            </nuxt-link>
+            <nuxt-link :to="localePath('/twitter-feed')" class="dark border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              {{ $t('nav.twitterFeed') }}
             </nuxt-link>
           </div>
         </div>

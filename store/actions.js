@@ -237,6 +237,23 @@ export default {
     })
   },
 
+  fetchTwitterPosts({commit}, {tag, page, city, state}) {
+    return new Promise((resolve, reject) => {
+      if (tag.length === 0) tag = null
+      if (city.length === 0) city = null
+      this.$axios.get('/twitter-post', {
+        params: {
+          page: page ? page : 1,
+          tag: tag ? tag : '',
+          city: city ? city : '',
+          state: state ? state : ''
+        }
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => reject(error))
+    })
+  },
+
   fetchAllPostsForUser({commit, state}, {page}) {
     return new Promise((resolve, reject) => {
       if (!page) {

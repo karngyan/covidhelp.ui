@@ -2,7 +2,8 @@ const strings = {
   nav: {
     name: 'COVID Help India',
     dashboard: 'Dashboard',
-    feed: 'Feed',
+    feed: 'Volunteer Feed',
+    twitterFeed: 'Twitter Feed',
     signIn: 'Sign In',
     signOut: 'Sign Out',
     donation: 'Donation',
