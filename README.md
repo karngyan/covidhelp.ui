@@ -45,6 +45,11 @@ Read more here: [CONTRIBUTING GUIDE](./CONTRIBUTING.md)
 
 The backend is in a private repository. This directly consumes the api. What we expect from developers is to either add information thats publicly available or consume some public API to add on to the info on the website. If you're interested in adding an API. Drop us a message on Slack.
 
+## Contributors
+
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
+
 ## License
 
 Distributed under the AGPL-3.0 License . See `LICENSE` for more information.
