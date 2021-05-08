@@ -4,7 +4,13 @@ const strings = {
     dashboard: 'Dashboard',
     feed: 'Feed',
     signIn: 'Sign In',
-    signOut: 'Sign Out'
+    signOut: 'Sign Out',
+    donation: 'Donation',
+    donationLinks: {
+      giveIndia: 'Give India Organization',
+      ketto: 'Ketto Organization',
+      viratAnushkaFundraiser: 'Virat and Anushka Fundraiser'
+    },
   },
   footer: {
     feedback: 'Feedback',

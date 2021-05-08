@@ -6,6 +6,12 @@ const strings = {
     feed: "ഫീഡ്",
     signIn: "സൈൻ ഇൻ ചെയ്യുക",
     signOut: "സൈൻ ഔട്ട് ചെയ്യുക",
+    donation: 'സംഭാവന',
+    donationLinks: {
+      giveIndia: 'ഇന്ത്യ ഓർഗനൈസേഷൻ നൽകുക',
+      ketto: 'കെറ്റോ ഓർഗനൈസേഷൻ',
+      viratAnushkaFundraiser: 'വിരാടും അനുഷ്ക ധനസമാഹരണവും'
+    },
   },
   footer: { feedback: "ഫീഡ്ബാക്ക്", team: "ടീം" },
   home: {

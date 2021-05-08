@@ -6,6 +6,12 @@ const strings = {
     feed: "भरवणे",
     signIn: "साइन इन",
     signOut: "साइन आउट",
+    donation: 'देणगी',
+    donationLinks: {
+      giveIndia: 'भारत संघटना द्या',
+      ketto: 'केट्टो ऑर्गनायझेशन',
+      viratAnushkaFundraiser: 'विराट आणि अनुष्का फंडरॅसर'
+    }
   },
   footer: { feedback: "अभिप्राय", team: "संघ" },
   home: {

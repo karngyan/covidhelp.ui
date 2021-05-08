@@ -4,7 +4,13 @@ const strings = {
     dashboard: 'डैशबोर्ड',
     feed: 'मदद पोस्ट फ़ीड',
     signIn: 'साइन इन करें',
-    signOut: 'प्रस्थान करें'
+    signOut: 'प्रस्थान करें',
+    donation: 'दान',
+    donationLinks: {
+      giveIndia: 'भारत संगठन दो',
+      ketto: 'केटो संगठन',
+      viratAnushkaFundraiser: 'विराट और अनुष्का शिलान्यास'
+    },
   },
   footer: {
     feedback: 'प्रतिक्रिया दें',

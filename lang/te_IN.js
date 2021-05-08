@@ -6,6 +6,12 @@ const strings = {
     feed: "తినిపించు",
     signIn: "సైన్ ఇన్",
     signOut: "సైన్ అవుట్ చేయండి",
+    donation: 'విరాళం',
+    donationLinks: {
+      giveIndia: 'ఇండియా ఆర్గనైజేషన్ ఇవ్వండి',
+      ketto: 'కెట్టో సంస్థ',
+      viratAnushkaFundraiser: 'విరాట్ మరియు అనుష్క నిధుల సమీకరణ'
+    },
   },
   footer: { feedback: "ఫీడ్ బ్యాక్", team: "జట్టు" },
   home: {
