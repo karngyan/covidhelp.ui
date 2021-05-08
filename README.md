@@ -10,7 +10,7 @@
 ## Hero
 
 <p align="center">
-  <img width="600px" src="https://api.covidhelp.page/swagger/hero.png" />
+  <img width="600px" src="https://api.covidhelp.page/swagger/hero.png" style="border-radius: 7px"/>
 </p>
 
 ## Build Setup
