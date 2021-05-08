@@ -71,7 +71,7 @@ export default {
       {code: 'en', name: 'English', file: 'en_US.js'},
       {code: 'hi', name: 'हिंदी', file: 'hi_IN.js'},
       {code: 'ba', name: 'বাংলা', file: 'bn_IN.js'},
-      // {code: 'pa', name: 'ਪੰਜਾਬੀ', file: 'pa_IN.js'},
+      {code: 'pa', name: 'ਪੰਜਾਬੀ', file: 'pa_IN.js'},
       {code: 'mr', name: 'मराठी', file: 'mr_IN.js'},
       // {code: 'gu', name: 'ગુજરાતી', file: 'gu_IN.js'},
       // {code: 'kn', name: 'ಕನ್ನಡ', file: 'kn_IN.js'},
