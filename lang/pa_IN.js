@@ -1,4 +1,4 @@
-/ Punjabi language. (India)
+//Punjabi language. (India)
 const strings = {
   nav: {
     name: "ਕੋਵਿਡ ਹੈਲਪ ਇੰਡੀਆ",
