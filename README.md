@@ -48,6 +48,23 @@ The backend is in a private repository. This directly consumes the api. What we 
 ## Contributors
 
 <!-- readme: collaborators,contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/karngyan">
+            <img src="https://avatars.githubusercontent.com/u/32811552?v=4" width="100;" alt="karngyan"/>
+            <br />
+            <sub><b>Gyan Prakash Karn</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/shloksingh10">
+            <img src="https://avatars.githubusercontent.com/u/32534590?v=4" width="100;" alt="shloksingh10"/>
+            <br />
+            <sub><b>Shlok Singh</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators,contributors -end -->
 
 ## License
