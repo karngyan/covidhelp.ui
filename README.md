@@ -58,6 +58,13 @@ The backend is in a private repository. This directly consumes the api. What we 
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/SinghKD">
+            <img src="https://avatars.githubusercontent.com/u/36220354?v=4" width="100;" alt="SinghKD"/>
+            <br />
+            <sub><b>Karandeep Singh</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/shloksingh10">
             <img src="https://avatars.githubusercontent.com/u/32534590?v=4" width="100;" alt="shloksingh10"/>
             <br />
