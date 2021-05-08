@@ -55,7 +55,7 @@
                     {{ beneficiary.whatsappNumber }}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <a class="underline text-purple-600" :href="beneficiary.reportUrl" target="_blank">{{ beneficiary.reportUrl }}</a>
+                    <a class="underline text-purple-600" :href="beneficiary.reportUrl" target="_blank">Open Report</a>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {{ beneficiary.oxygenLevel  + ' %'}}
