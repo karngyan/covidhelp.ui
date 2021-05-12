@@ -16,7 +16,7 @@
     <b-tabs v-model="form.findBy" position="is-centered" class="block">
       <b-tab-item
         value="0"
-        label="PIN Code">
+        :label="$t('pinCode')">
         <b-field :label="$t('email')">
           <b-input placeholder="mail@gmail.com" v-model="form.email" type="email"></b-input>
         </b-field>
@@ -44,7 +44,7 @@
 
 
 
-      <b-tab-item value="1" label="District Code">
+      <b-tab-item value="1" :label="$t('district')">
         <b-field :label="$t('email')">
           <b-input placeholder="mail@gmail.com" v-model="form.email" type="email"></b-input>
         </b-field>
