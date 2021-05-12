@@ -143,7 +143,7 @@ const strings = {
   },
   vaccineNotifier: {
     header: 'Vaccine Notifier',
-    subtext: 'We notify users via email & whatsapp (coming soon) after a fixed interval. (in order to not exploit CoWIN APIs)',
+    subtext: 'We notify users via email after a fixed interval. (in order to not exploit CoWIN APIs)',
     notifyMe: 'Notify me when slots are available'
   },
   pinCode: 'Pin Code',
