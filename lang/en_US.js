@@ -7,6 +7,7 @@ const strings = {
     signIn: 'Sign In',
     signOut: 'Sign Out',
     donation: 'Donation',
+    vaccineNotifier: 'Vaccine Notifier',
     donationLinks: {
       giveIndia: 'Give India Organization',
       ketto: 'Ketto Organization',
@@ -140,7 +141,14 @@ const strings = {
     remdesivir: 'Remdesivir',
     other: 'Other'
   },
+  vaccineNotifier: {
+    header: 'Vaccine Notifier',
+    subtext: 'We notify users via email & whatsapp (coming soon) every hour (in order to not exploit the CoWin APIs).',
+    notifyMe: 'Notify me when slots are available'
+  },
+  pinCode: 'Pin Code',
+  ageGroup: 'Age Group',
+  district: 'District'
 }
-
 
 export default strings

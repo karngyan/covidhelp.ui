@@ -89,6 +89,13 @@
               {{ $t('nav.twitterFeed') }}
             </nuxt-link>
 
+            <nuxt-link :to="localePath('/vaccine-notifier')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="active-svg text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+              </svg>
+              {{ $t('nav.vaccineNotifier') }}
+            </nuxt-link>
+
             <div class="border-b border-gray-200"></div>
 
             <nuxt-link :to="localePath('/feedback')" class="active-tab text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
@@ -145,6 +152,9 @@
             </nuxt-link>
             <nuxt-link :to="localePath('/twitter-feed')" class="dark border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
               {{ $t('nav.twitterFeed') }}
+            </nuxt-link>
+            <nuxt-link :to="localePath('/vaccine-notifier')" class="dark border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+              {{ $t('nav.vaccineNotifier') }}
             </nuxt-link>
           </div>
         </div>

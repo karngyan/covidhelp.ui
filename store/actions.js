@@ -379,6 +379,17 @@ export default {
           reject(error)
       })
     })
-  }
+  },
 
+  createVNRequest({}, form) {
+    return new Promise((resolve, reject) => {
+      this.$axios.post('/vaccine-notification/request', {
+        ...form
+      }).then((resp) => {
+        resolve(resp.data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
+  }
 }
