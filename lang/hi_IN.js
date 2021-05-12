@@ -7,6 +7,7 @@ const strings = {
     signIn: 'साइन इन करें',
     signOut: 'प्रस्थान करें',
     donation: 'दान',
+    vaccineNotifier: 'वैक्सीन नोटिफ़ायर',
     donationLinks: {
       giveIndia: 'भारत संगठन दो',
       ketto: 'केटो संगठन',
@@ -140,6 +141,14 @@ const strings = {
     remdesivir: 'रेमेडीसविर',
     other: 'अन्य'
   },
+  vaccineNotifier: {
+    header: 'वैक्सीन नोटिफ़ायर',
+    subtext: 'हम हर घंटे (CoWin API का दोहन नहीं करने के लिए) ईमेल और व्हाट्सएप के माध्यम से उपयोगकर्ताओं को सूचित करते हैं।',
+    notifyMe: 'स्लॉट उपलब्ध होने पर मुझे सूचित करें'
+  },
+  pinCode: 'पिन कोड',
+  ageGroup: 'आयु वर्ग',
+  district: 'जिला'
 }
 
 
