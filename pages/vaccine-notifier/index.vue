@@ -30,13 +30,15 @@
         </b-field>
 
         <b-field :label="$t('ageGroup')">
-          <b-radio v-model="form.ageGroup" name="18+" native-value="0">
-              18+
-          </b-radio>
-          <b-radio v-model="form.ageGroup" name="45+" native-value="1">
-              45+
-          </b-radio>
+
+          <b-select placeholder="Select one" expanded v-model="form.ageGroup">
+            <option value="0">18+</option>
+            <option value="1">45+</option>
+          </b-select>
+
         </b-field>
+
+
 
       </b-tab-item>
 
@@ -64,17 +66,17 @@
         </b-field>
 
         <b-field :label="$t('ageGroup')">
-          <b-radio v-model="form.ageGroup" name="18+" native-value="0">
-            18+
-          </b-radio>
-          <b-radio v-model="form.ageGroup" name="45+" native-value="1">
-            45+
-          </b-radio>
+
+          <b-select placeholder="Select one" expanded v-model="form.ageGroup">
+            <option value="0">18+</option>
+            <option value="1">45+</option>
+          </b-select>
+
         </b-field>
       </b-tab-item>
     </b-tabs>
 
-    <div class="py-4 mx-4">
+    <div class="mx-4">
       <b-button @click="submitForm" :disabled="(form.findBy === '0' && form.pinCode.length !== 6) || (form.findBy === '1' && state === null && district === null)" type="is-primary" expanded :loading="form.loading">{{ $t('vaccineNotifier.notifyMe') }}</b-button>
     </div>
 
@@ -162,6 +164,7 @@ export default {
     }
   },
   created() {
+    console.debug(this.$data)
   }
 }
 </script>
