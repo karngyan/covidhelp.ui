@@ -66,6 +66,9 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    hostname: 'https://covidhelp.page'
+  },
   i18n: {
     lazy: true,
     langDir: 'lang/',
