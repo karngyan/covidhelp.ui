@@ -12,6 +12,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/firebase": "^7.5.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.9.1",
     "date-fns": "^2.21.1",
     "firebase": "^8.4.3",
