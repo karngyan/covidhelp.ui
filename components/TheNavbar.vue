@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div v-show="menuOpen" class="fixed inset-0 flex z-50 md:hidden" role="dialog" aria-modal="true">
+  <div v-show="menuOpen" class="fixed inset-0 flex z-30 md:hidden" role="dialog" aria-modal="true">
     <transition
       enter-active-class="transition-opacity ease-linear duration-300"
       enter-class="opacity-0"
@@ -127,7 +127,7 @@
     <div class="flex-shrink-0 w-14"></div>
   </div>
 
-  <nav class="sticky top-0 w-full bg-white z-40 backdrop-filter border-b border-gray-200 shadow">
+  <nav class="sticky top-0 w-full bg-white z-30 backdrop-filter border-b border-gray-200 shadow">
     <div class="max-w-7xl mx-auto px-2 md:px-4 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex pr-2 lg:px-0 flex justify-between">

@@ -2,6 +2,7 @@
   <div>
     <Nuxt/>
     <Notification />
+    <Archive />
   </div>
 </template>
 

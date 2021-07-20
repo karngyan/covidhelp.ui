@@ -5,6 +5,7 @@
     <Nuxt />
     <TheFooter />
     <Notification />
+    <Archive />
   </div>
 </template>
 

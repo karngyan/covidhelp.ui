@@ -212,6 +212,7 @@
     </div>
 
     <Notification />
+    <Archive />
   </div>
 </template>
 
